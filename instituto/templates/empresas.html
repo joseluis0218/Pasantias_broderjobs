@@ -1,0 +1,111 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block titulo %}Empresas{% endblock titulo %}
+
+{% block extracss %}
+    <link href="{% static 'css/dataTables.bootstrap4.css'%}" rel="stylesheet">
+    <link href="{% static 'css/switch.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/search.css'%}">
+{% endblock extracss %}
+
+
+{% block contenido %}
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card" style="margin-top:3%;">
+                            <div class="card-body">
+                                <h4 class="card-title">LISTA DE EMPRESAS</h4>
+                                <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
+                                        cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Empresa</th>
+                                                <th>Representante</th>
+                                                <th>Correo</th>
+                                                <th>Fecha creación</th>
+                                                <th>Fecha activación</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Empresa</th>
+                                                <th>Representante</th>
+                                                <th>Correo</th>
+                                                <th>Fecha creación</th>
+                                                <th>Fecha activación</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td>Tecsup</td>
+                                                <td>Khaterine Ramirez</td>
+                                                <td>admin@tecsup.edu.pe</td>
+                                                <td>25/04/18</td>
+                                                <td>31/04/18</td>
+                                                <td>
+                                                    <ul class="tg-list">
+                                                        <li class="tg-list-item">
+                                                            <input class="tgl tgl-ios" id="cb1" type="checkbox" />
+                                                            <label class="tgl-btn" for="cb1"></label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senati</td>
+                                                <td>Luciana Ramirez</td>
+                                                <td>luciana@tecsup.edu.pe</td>
+                                                <td>28/06/18</td>
+                                                <td>01/07/18</td>
+                                                <td>
+                                                    <ul class="tg-list">
+                                                        <li class="tg-list-item">
+                                                            <input class="tgl tgl-ios" id="cb2" type="checkbox" />
+                                                            <label class="tgl-btn" for="cb2"></label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plaza Vea</td>
+                                                <td>Jorge Flores</td>
+                                                <td>jorge.flores@vea.com</td>
+                                                <td>17/09/18</td>
+                                                <td>21/09/18</td>
+                                                <td>
+                                                    <ul class="tg-list">
+                                                        <li class="tg-list-item">
+                                                            <input class="tgl tgl-ios" id="cb3" type="checkbox" />
+                                                            <label class="tgl-btn" for="cb3"></label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock contenido %}
+
+
+{% block extrajs %}
+    <script>
+        $('#example23').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    </script>
+
+{% endblock extrajs %}

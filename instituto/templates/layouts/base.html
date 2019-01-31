@@ -1,0 +1,231 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon.png'%}">
+    <title>{% block titulo %}Broderjobs | Empresa{% endblock titulo %}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Editable CSS -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/jsgrid.min.css'%}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/jsgrid-theme.min.css'%}" />
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="{% static 'css/blue.css'%}" id="theme" rel="stylesheet">
+  
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    {% block extracss %}
+    {% endblock extracss %}
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+           <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img style="width:25px;height: 25px; margin: 5px;" src="{% static 'img/menu-button-of-three-horizontal-lines.png'%}" alt="homepage"
+                                class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img style="width:25px;height: 25px; margin: 5px;" src="{% static 'img/menu-button-of-three-horizontal-lines.png'%}" alt="homepage"
+                                class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>
+                            <!-- dark Logo text -->
+                            <img src="{% static 'img/logo-text.png'%}" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="{% static 'img/logo-light-text.png'%}" class="light-logo" alt="homepage" /></span> </a>
+
+                    <a class="navbar-brand nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><img
+                            style="width:25px;height: 25px; margin: 5px;" src="{% static 'img/menu-button-of-three-horizontal-lines.png'%}" alt="homepage"
+                            class="light-logo" /></a>
+
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'img/user.png'%}" alt="user" class="profile-pic" /></a>
+                               <div class="dropdown-menu dropdown-menu-right scale-up">
+                                    <ul class="dropdown-user">
+                                        <li>
+                                            <div class="dw-user-box">
+                                                <div class="u-img"><img src="{% static 'img/user.png'%}" alt="user"></div>
+                                                <div class="u-text">
+                                                    <h4>Steave Jobs</h4>
+                                                    <p class="text-muted">varun@gmail.com</p></div>
+                                            </div>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="editar-perfil.html"><i class="fas fa-user-edit"></i> Editar Perfil</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="cambiar-contraseña.html"><i class="fab fa-expeditedssl"></i> Cambiar contraseña</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+
+                <!-- Sidebar navigation comienza para el menú-->
+                    
+                <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                            
+                            <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="fas fa-home"></i><span class="hide-menu">Inicio </span></a>
+                                
+                            </li>
+                            <li> <a class="waves-effect waves-dark" href="{% url 'empresa:index'%}" aria-expanded="false"><i class="fas fa-tasks"></i></i><span class="hide-menu">Empresas</span></a>
+                            </li>
+                            <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="fas fa-search"></i><span class="hide-menu">Buscar CV's</span></a>
+                                                            </li>
+                            <li> <a class="waves-effect waves-dark" href="{% url 'oportunidad:index'%}" aria-expanded="false"><i class="fas fa-hand-paper"></i><span class="hide-menu">Oportunidades</span></a>
+                            </li>
+                            <li> <a class="waves-effect waves-dark" href="{% url 'usuario:index'%}" aria-expanded="false"><i class="fas fa-users-cog"></i><span class="hide-menu">Usuarios</span></a>
+                            </li>
+                            <li> <a class="waves-effect waves-dark" href="reportes.html" aria-expanded="false"><i class="fas fa-chart-pie"></i><span class="hide-menu">Reportes</span></a>
+                               
+                            </li>
+                        </ul>
+                    </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+            <!-- Bottom points-->
+            <div class="sidebar-footer">
+                <!-- <a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>item-->
+          
+                <!-- <a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a> </div>item-->
+            <!-- End Bottom points-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        
+
+        <div class="page-wrapper" style="min-height: 721px;">
+        
+            <div class="{% block class %}container-fluid{% endblock class %}" style="padding-top: 3%;">
+            {% block contenido %}
+
+            {% endblock contenido %}
+
+            </div> 
+            <footer class="footer">
+                © 2019 BroderJobs
+            </footer>
+          
+        </div>  
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'js/jquery.slimscroll.js'%}"></script>
+    <!--Wave Effects -->
+    <script src="{% static 'js/waves.js'%}"></script>
+    <!--Menu sidebar -->
+    <script src="{% static 'js/sidebarmenu.js'%}"></script>
+    <!--stickey kit -->
+    <script src="{% static 'js/sticky-kit.min.js'%}"></script>
+    <script src="{% static 'js/jquery.sparkline.min.js'%}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'js/custom.min.js'%}"></script>
+    <!-- Editable -->
+    <script src="{% static 'js/db.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jsgrid.min.js'%}"></script>
+    <script src="{% static 'js/jsgrid-init.js'%}"></script>
+    <!-- ============================================================== -->
+        <!-- This is data table -->
+     <script src="{% static 'js/datatables.min.js'%}"></script>
+     <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
+     <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="{% static 'src/js/jQuery.style.switcher.js'%}"></script>
+    
+    {% block extrajs %}
+    {% endblock extrajs %}
+       
+</body>
+
+</html>

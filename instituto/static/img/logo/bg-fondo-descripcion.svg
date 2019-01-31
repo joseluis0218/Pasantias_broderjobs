@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="744px" height="817px" viewBox="0 0 744 817" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>background (1)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="744" height="817"></rect>
+        <linearGradient x1="98.8317518%" y1="10.2028066%" x2="2.97224877%" y2="70.5828166%" id="linearGradient-3">
+            <stop stop-color="#52C3FB" offset="0%"></stop>
+            <stop stop-color="#12B0FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="98.8317518%" y1="7.81695699%" x2="2.97224877%" y2="71.8167606%" id="linearGradient-4">
+            <stop stop-color="#52C3FB" offset="0%"></stop>
+            <stop stop-color="#12B0FF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-5" x="0" y="0" width="744" height="817"></rect>
+        <linearGradient x1="77.7392137%" y1="9.43732532%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#23A1FF" offset="0%"></stop>
+            <stop stop-color="#113F8C" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#95F6FF" offset="0%"></stop>
+            <stop stop-color="#5CE9FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#4E9DFF" offset="0%"></stop>
+            <stop stop-color="#5C82FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="background-(1)">
+            <g id="Clipped">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="path-5"></g>
+                <g id="Group" mask="url(#mask-2)" fill="url(#linearGradient-4)">
+                    <g id="Mask">
+                        <rect id="path-9" x="0.46829253" y="0" width="852.947775" height="928.620977"></rect>
+                    </g>
+                </g>
+            </g>
+            <g id="Path-8-Clipped">
+                <mask id="mask-6" fill="white">
+                    <use xlink:href="#path-5"></use>
+                </mask>
+                <g id="path-5"></g>
+                <polygon id="Path-8" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.484997736" mask="url(#mask-6)" points="0 486.278382 824 2 824 819 0 819"></polygon>
+            </g>
+            <g id="Path-9-Clipped" fill-rule="nonzero" fill="url(#linearGradient-8)" opacity="0.393115942">
+                <polygon id="Path-9" points="0 0 0 487 472 206.997464 300.521951 0"></polygon>
+            </g>
+            <g id="Path-9-Copy-Clipped" transform="translate(156.000000, 410.000000)" fill-rule="nonzero" fill="url(#linearGradient-9)" opacity="0.63">
+                <polygon id="Path-9-Copy" transform="translate(294.250000, 203.750000) rotate(90.000000) translate(-294.250000, -203.750000) " points="183.5 -90 91 497.5 497.5 -90"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
