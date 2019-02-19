@@ -2,63 +2,73 @@
   .cntr {
     margin: auto;
   }
-  
-  .btn-radio {
+
+  .btn-radio , .btn-radio1, .btn-radio2, .btn-radio3{
     cursor: pointer;
     display: inline-block;
     float: left;
     -webkit-user-select: none;
     user-select: none;
   }
-  .btn-radio:not(:first-child) {
+
+  .btn-radio:not(:first-child) , .btn-radio1:not(:first-child), .btn-radio2:not(:first-child) , .btn-radio3:not(:first-child){
     margin-left: 20px;
   }
   @media screen and (max-width: 480px) {
-    .btn-radio {
+    .btn-radio, .btn-radio1, .btn-radio2, .btn-radio3{
       display: block;
       float: none;
     }
-    .btn-radio:not(:first-child) {
+    .btn-radio:not(:first-child) , .btn-radio1:not(:first-child), .btn-radio2:not(:first-child), .btn-radio3:not(:first-child){
       margin-left: 0;
       margin-top: 15px;
     }
   }
-  .btn-radio svg {
+  .btn-radio svg , .btn-radio1 svg, .btn-radio2 svg, .btn-radio3 svg {
     fill: none;
     vertical-align: middle;
   }
-  .btn-radio svg circle {
+  .btn-radio svg circle , .btn-radio1  svg circle, .btn-radio2  svg circle, .btn-radio3  svg circle {
     stroke-width: 2;
     stroke: #C8CCD4;
   }
   .btn-radio svg path {
     stroke: #008FFF;
   }
-  .btn-radio svg path.inner {
+  .btn-radio1 svg path {
+    stroke: #36CB06;
+  }
+  .btn-radio2 svg path {
+    stroke: #FF8700;
+  }
+  .btn-radio3 svg path {
+    stroke: #E5002A;
+  }
+  .btn-radio svg path.inner , .btn-radio1  svg path.inner, .btn-radio2  svg path.inner, .btn-radio3  svg path.inner {
     stroke-width: 6;
     stroke-dasharray: 19;
     stroke-dashoffset: 19;
   }
-  .btn-radio svg path.outer {
+  .btn-radio svg path.outer , .btn-radio1  svg path.outer, .btn-radio2  svg path.outer, .btn-radio3  svg path.outer {
     stroke-width: 2;
     stroke-dasharray: 57;
     stroke-dashoffset: 57;
   }
-  .btn-radio input {
+  .btn-radio input , .btn-radio1  input, .btn-radio2  input, .btn-radio3  input {
     display: none;
   }
-  .btn-radio input:checked + svg path {
+  .btn-radio input:checked + svg path, .btn-radio1  input:checked + svg path , .btn-radio2  input:checked + svg path, .btn-radio3  input:checked + svg path{
     transition: all 0.4s ease;
   }
-  .btn-radio input:checked + svg path.inner {
+  .btn-radio input:checked + svg path.inner , .btn-radio1 input:checked + svg path.inner, .btn-radio2 input:checked + svg path.inner, .btn-radio3 input:checked + svg path.inner {
     stroke-dashoffset: 38;
     transition-delay: 0.3s;
   }
-  .btn-radio input:checked + svg path.outer {
+  .btn-radio input:checked + svg path.outer , .btn-radio1  input:checked + svg path.outer, .btn-radio2  input:checked + svg path.outer, .btn-radio3  input:checked + svg path.outer {
     stroke-dashoffset: 0;
   }
-  .btn-radio span {
+  .btn-radio span , .btn-radio1 span, .btn-radio2 span, .btn-radio3 span {
     display: inline-block;
     vertical-align: middle;
   }
-  
+

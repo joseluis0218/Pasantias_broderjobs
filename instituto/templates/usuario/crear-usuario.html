@@ -1,0 +1,39 @@
+{% load widget_tweaks %}
+<div class="modal-header">
+  <h4 class="modal-title" id="myModalLabel">CREAR USUARIO</h4>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+  <form id="crear-usuario" method="POST" action="">
+    <div class="form-group">
+      {% csrf_token %}
+
+      {% for field in usuario_form %}
+      <div class="col-md-12 m-b-18">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% render_field field class="form-control" %}
+        <div class="{% if field.errors %} invalid{% endif %}">
+          {% for error in field.errors %}
+          <small style="color: red" class="help-block">{{ error }}</small>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+      {% for field in persona_form %}
+      <div class="col-md-12 m-b-18">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% render_field field class="form-control"%}
+        <div class="{% if field.errors %} invalid{% endif %}">
+          {% for error in field.errors %}
+          <small style="color: red" class="help-block">{{ error }}</small>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="submit-btn btn btn-info waves-effect" id="btn-enviar">Guardar</button>
+      <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+    </div>
+  </form>

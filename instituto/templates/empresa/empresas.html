@@ -1,0 +1,77 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block titulo %}Empresas{% endblock titulo %}
+{% block extracss %}
+
+<link rel="stylesheet" href="{% static 'css/custom-switch.css' %}">
+{% endblock extracss %}
+
+
+{% block contenido %}
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card" style="margin-top:3%;">
+            <div class="card-body">
+                <h4 class="card-title">LISTA DE EMPRESAS</h4>
+                <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                <div class="table-responsive m-t-40">
+                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
+                        cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Empresa</th>
+                                <th>Representante</th>
+                                <th>Correo</th>
+                                <th>Fecha creación</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dato in datos  %}
+                            <tr>
+                                <td>{{ dato.empresa.nombre }}</td>
+                                <td>{{ dato.persona.usuario.first_name }}</td>
+                                <td>{{ dato.persona.usuario.email }}</td>
+                                <td>{{ dato.empresa.fecha_creacion }}</td>
+                                <td>
+                                    <label class="switch">
+                                        <input type="checkbox" id="{{ dato.id }}" value="{{ dato.estado }}"
+                                            class="checkbox">
+                                        <span></span>
+                                    </label>
+                                </td>
+
+                                {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                    <div class="destino">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}
+
+
+{% block extrajs %}
+<script>
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+</script>
+<script src="{% static 'js/cambio-estado.js'%}"></script>
+<script src="{% static 'js/DjangoAjax.js'%}"></script>
+
+
+{% endblock extrajs %}

@@ -1,0 +1,117 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block titulo %}Usuarios{% endblock titulo %}
+
+{% block contenido %}
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+{% if messages %}
+<div id="results">
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissable" {% endif %}>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>{{ message }}</h4>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-12">
+        <div class="card" style="margin-top: 3%">
+            <div class="card-body">
+                <h4 class="card-title">Lista de Usuarios</h4>
+                <h6 class="card-subtitle"></h6>
+                <button type="button" name="button"
+                    class="crear-usuario btn btn-info btn-rounded m-t-10 float-right">Crear Nuevo Usuario</button>
+
+                <!-- Add Contact Popup Model -->
+                <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive">
+                    <table id="demo-foo-addrow"
+                        class="table table-bordered m-t-30 table-hover table-striped  contact-list" data-paging="true"
+                        data-paging-size="7">
+                        <thead>
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Usuario</th>
+                                <th>Correo</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for persona in personas %}
+                            <tr>
+                                <td>{{ persona.usuario.first_name }}</td>
+                                <td>{{ persona.usuario.last_name }}</td>
+                                <td>{{ persona.usuario.username }}</td>
+                                <td>{{persona.usuario.email}}</td>
+                                <td>
+                                    <img src="{% static 'img/edit.svg'%}" alt="Editar"
+                                        class="img-responsive model_img editar-usuario"
+                                        data-id="{% url 'usuario:editar_usuario' persona.pk %}">
+
+                                    <img src="{% static 'img/trash.svg'%}" alt="Eliminar"
+                                        class="img-responsive model_img eliminar-usuario"
+                                        data-id="{% url 'usuario:eliminar_usuario' persona.pk %}">
+{#                                          <button type="button" class="ver-usuario btn btn-sm btn-primary" data-id="{% url 'usuario:ver_usuario' persona.pk %}" />#}
+{#                                              <span class="fa fa-eye"></span>#}
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                <div class="pagination">
+    <span class="step-links">
+        {% if personas.has_previous %}
+            <a href="?page=1">&laquo; Primero</a>
+            <a href="?page={{ personas.previous_page_number }}">Volver</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ personas.number }} de {{ personas.paginator.num_pages }}.
+        </span>
+
+        {% if personas.has_next %}
+            <a href="?page={{ personas.next_page_number }}">Siguiente</a>
+            <a href="?page={{ personas.paginator.num_pages }}">Último &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+                </div>
+            </div>
+        </div>
+        {% endblock contenido %}
+
+        {% block extrajs %}
+        <script>
+            $(document).ready(function () {
+
+                $(".crear-usuario").modalForm({
+                    formURL: "{% url 'usuario:crear_usuario' %}"
+                });
+                $(".editar-usuario").each(function () {
+                    $(this).modalForm({ formURL: $(this).data('id') });
+                });
+
+                $(".ver-usuario").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+                $(".eliminar-usuario").each(function () {
+                    $(this).modalForm({ formURL: $(this).data('id') });
+                })
+            });
+        </script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+        {% endblock extrajs %}

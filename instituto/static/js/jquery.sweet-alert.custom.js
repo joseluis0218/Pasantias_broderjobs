@@ -4,9 +4,9 @@
 
     var SweetAlert = function() {};
 
-    //examples 
+    //examples
     SweetAlert.prototype.init = function() {
-        
+
     //Basic
     $('#sa-basic').click(function(){
         swal("Here's a message!");
@@ -23,58 +23,51 @@
     });
 
     //Warning Message
-    $('#sa-warning').click(function(){
-        swal({   
-            title: "¿Estas seguro?",   
-            text: "¡Este usuario se eliminará definitivamente!",   
-            type: "warning", 
-            showCancelButton: true,  
-            cancelButtonText: "Cancelar",   
-            confirmButtonColor: "#DD6B55",   
-            confirmButtonText: "Si, elimínalo!",   
-            closeOnConfirm: false 
-        }, function(){   
-            swal("Eliminado!", "Your imaginary file has been deleted.", "success"); 
-        });
-    });
+
 
     //Parameter
     $('.sa-params').click(function(){
-        swal({   
-            title: "¿Está seguro?",   
-            text: "¡Este usuario se eliminará definitivamente!",   
-            type: "warning",   
-            showCancelButton: true,   
-            confirmButtonColor: "#DD6B55",   
-            confirmButtonText: "Si, elimínalo!",   
-            cancelButtonText: "No, cancelar!",   
-            closeOnConfirm: false,   
-            closeOnCancel: false 
-        }, function(isConfirm){   
-            if (isConfirm) {     
-                swal("Eliminado!", "El usuario ha sido eliminado correctamente.", "success");   
-            } else {     
-                swal("Cancelled", "Registro no eliminado.", "error");   
-            } 
-        });
+
+const swalWithBootstrapButtons = Swal.mixin({
+  confirmButtonClass: 'btn btn-danger',
+  cancelButtonClass: 'btn btn-default',
+  buttonsStyling: false,
+});
+
+swalWithBootstrapButtons.fire({
+  title: '¿Esta seguro de eliminar este usuario?',
+  text: "No podrás revertir esta acción",
+  type: 'warning',
+  showCancelButton: true,
+  cancelButtonText: 'No, cancelar!',
+  confirmButtonText: 'Si, eliminar!',
+}).then((result) => {
+  if (result.value) {
+    swalWithBootstrapButtons.fire(
+      'Eliminado!',
+      'El usuario ha sido eliminado correctamente',
+      'success',
+    );
+  }
+})
     });
 
     //Custom Image
     $('#sa-image').click(function(){
-        swal({   
-            title: "Govinda!",   
-            text: "Recently joined twitter",   
-            imageUrl: "../assets/images/users/profile.png" 
+        swal({
+            title: "Govinda!",
+            text: "Recently joined twitter",
+            imageUrl: "../assets/images/users/profile.png"
         });
     });
 
     //Auto Close Timer
     $('#sa-close').click(function(){
-         swal({   
-            title: "Auto close alert!",   
-            text: "I will close in 2 seconds.",   
-            timer: 2000,   
-            showConfirmButton: false 
+         swal({
+            title: "Auto close alert!",
+            text: "I will close in 2 seconds.",
+            timer: 2000,
+            showConfirmButton: false
         });
     });
 
@@ -84,7 +77,7 @@
     $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
 }(window.jQuery),
 
-//initializing 
+//initializing
 function($) {
     "use strict";
     $.SweetAlert.init()

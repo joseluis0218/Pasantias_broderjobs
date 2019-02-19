@@ -1,0 +1,17 @@
+{% load widget_tweaks %}
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">ELIMINAR USUARIO</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+
+    <form id="eliminar-usuario" method="POST">
+        {% csrf_token %}
+        <h3 class="center">¿ Estas seguro de eliminar a el usuario: <strong>"{{ usuario.first_name }}"</strong> ?</h3>
+        <p class="center">El usuario se eliminará de manera indefinida.</p>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-danger" id="btn-enviar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+        </div>
+    </form>

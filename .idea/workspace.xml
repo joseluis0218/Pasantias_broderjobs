@@ -1,40 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../biblioteca/biblioteca/biblioteca/settings.py" description="SITE_ID = 1" line="134" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc3bb639-f798-41fe-9522-2c5728dd8775" name="Default Changelist" comment="" />
+    <list default="true" id="fc3bb639-f798-41fe-9522-2c5728dd8775" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/main/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/static/css/custom-radio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/static/css/custom-switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/static/css/normalize.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/static/js/cambio-estado.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/usuario/eliminar-usuario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/usuario/ver-usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/broderjobs_instituto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/broderjobs_instituto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/empresas/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/empresa/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/empresas/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/oportunidad/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/css/radio-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/css/radio-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/css/switch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/js/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/js/datatables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/js/input-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/js/input-filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/static/js/jquery.sweet-alert.custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/js/jquery.sweet-alert.custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/empresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/layouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/layouts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/oportunidades.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/usuario/views.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/broderjobs/broderjobs/urls.py">
+        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="520">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/estudiante/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/oportunidades/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="79" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="79" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/static/js/cambio-estado.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-13">
+              <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-520">
+              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/broderjobs/broderjobs/settings.py">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+            <state relative-caret-position="264">
+              <caret line="252" column="54" selection-start-line="252" selection-start-column="54" selection-end-line="252" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/layout_listaoportunidades.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-509">
+              <caret line="171" column="80" lean-forward="true" selection-start-line="171" selection-start-column="80" selection-end-line="171" selection-end-column="80" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h5#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#4837#4861#0#HTML" expanded="true" />
+                <element signature="e#5090#5114#0#HTML" expanded="true" />
+                <element signature="e#5305#5348#0#HTML" expanded="true" />
+                <element signature="e#9022#9046#0#HTML" expanded="true" />
+                <element signature="e#9275#9299#0#HTML" expanded="true" />
+                <element signature="e#9490#9533#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1004" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>l</find>
+      <find>Rounds</find>
+      <find>oport</find>
+      <find>oport-sear</find>
+      <find>unique_slugify</find>
+      <find>User</find>
+      <find>Idioma</find>
+      <find>direccion_map</find>
+      <find>No data</find>
+      <find>switch</find>
+      <find>radio</find>
+      <find>.custom-control-label</find>
+      <find>span</find>
+      <find>p</find>
+      <find>&lt;p</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/models.py" />
+        <option value="$PROJECT_DIR$/instituto/auth/models.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/auth/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/users/models.py" />
+        <option value="$PROJECT_DIR$/instituto/users/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/apps.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/static/js/crud-usuarios.js" />
+        <option value="$PROJECT_DIR$/instituto/static/js/jquery.sweet-alert.custom.js" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/eliminar-usuario.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html" />
+        <option value="$PROJECT_DIR$/instituto/main/utils.py" />
+        <option value="$PROJECT_DIR$/instituto/main/models.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/empresa/empresas.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/models.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto/utils.py" />
+        <option value="$PROJECT_DIR$/instituto/oportunidad/models.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto/settings.py" />
+        <option value="$PROJECT_DIR$/instituto/empresas/models.py" />
+        <option value="$PROJECT_DIR$/instituto/oportunidades/views.py" />
+        <option value="$PROJECT_DIR$/instituto/oportunidades/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/estudiante/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/empresas/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/main/admin.py" />
+        <option value="$PROJECT_DIR$/instituto/static/js/input-filter.js" />
+        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/ver-usuario.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/usuarios.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html" />
+        <option value="$PROJECT_DIR$/instituto/static/css/oportunidades.css" />
+        <option value="$PROJECT_DIR$/instituto/static/js/datatables.min.js" />
+        <option value="$PROJECT_DIR$/instituto/static/css/switch.css" />
+        <option value="$PROJECT_DIR$/instituto/static/css/custom-switch.css" />
+        <option value="$PROJECT_DIR$/instituto/static/css/style.css" />
+        <option value="$PROJECT_DIR$/instituto/static/css/radio-button.css" />
+        <option value="$PROJECT_DIR$/instituto/static/css/custom-radio.css" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" />
+        <option value="$PROJECT_DIR$/instituto/estudiante/models.py" />
+        <option value="$PROJECT_DIR$/instituto/static/js/cambio-estado.js" />
+        <option value="$PROJECT_DIR$/instituto/oportunidades/models.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/layouts/base.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/layouts/layout_listaoportunidades.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="960" />
+    <option name="y" value="27" />
+    <option name="width" value="960" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -51,19 +310,104 @@
             <path>
               <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
               <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
-              <item name="broderjobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
-              <item name="broderjobs" type="462c0819:PsiDirectoryNode" />
-              <item name="broderjobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
-              <item name="broderjobs" type="462c0819:PsiDirectoryNode" />
               <item name="instituto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="empresas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="estudiante" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="empresa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="oportunidad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="oportunidades" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="empresa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="oportunidad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -72,10 +416,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../biblioteca" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/instituto/oportunidades" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/instituto/instituto_apps" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -102,57 +456,439 @@
       <workItem from="1547920194330" duration="1340000" />
       <workItem from="1548019225778" duration="3105000" />
       <workItem from="1548024338779" duration="646000" />
+      <workItem from="1548964769817" duration="19752000" />
+      <workItem from="1549142893429" duration="4000" />
+      <workItem from="1549145680805" duration="91960000" />
+      <workItem from="1549476678687" duration="24578000" />
+      <workItem from="1549564074318" duration="24786000" />
+      <workItem from="1549648997860" duration="9019000" />
+      <workItem from="1549687862150" duration="2853000" />
+      <workItem from="1549756336021" duration="413000" />
+      <workItem from="1549906853216" duration="17660000" />
+      <workItem from="1550079944832" duration="10899000" />
+      <workItem from="1550164443354" duration="48188000" />
+      <workItem from="1550363237821" duration="33226000" />
+      <workItem from="1550445269632" duration="29203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5091000" />
+    <option name="totallyTimeSpent" value="317632000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1004" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12339743" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25641027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32967034" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005342" side_tool="true" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946582" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32959402" />
-      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Graphics" order="4" weight="0.32968128" />
       <window_info anchor="right" id="R Packages" order="5" weight="0.32959402" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32968128" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/broderjobs/broderjobs/urls.py">
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/eliminar-usuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        <state relative-caret-position="78">
+          <caret line="3" column="90" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/broderjobs/broderjobs/settings.py">
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+        <state relative-caret-position="988">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/ver-usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <element signature="e#1527#1534#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/js/datatables.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="504" column="56" lean-forward="true" selection-start-line="504" selection-start-column="56" selection-end-line="504" selection-end-column="56" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/usuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/blue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/bootstrap-switch.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/custom-radio.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1348">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/custom-switch.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/dataTables.bootstrap4.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/jsgrid.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/jsgrid-theme.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/normalize.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/oportunidades.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/radio-button.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/switch.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/style.nuevo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/responsiveness.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/mdb.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/jquery.fileupload-ui-noscript.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/jquery.fileupload-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/blue-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/blueimp-gallery.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/bootstrap-datepicker.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/compiled.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/datatables.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="5" column="60156" selection-start-line="5" selection-start-column="60135" selection-end-line="5" selection-end-column="60156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="6890" column="30" selection-start-line="6890" selection-start-column="29" selection-end-line="6890" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/plugins/bootstrap/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/custom/footable.core.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/empresas/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2418">
+          <caret line="96" column="22" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding>
+            <element signature="e#1#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+          <folding>
+            <element signature="e#15#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/empresa/empresas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="41" column="96" selection-start-line="41" selection-start-column="92" selection-end-line="41" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="79" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/estudiante/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/static/js/cambio-estado.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="95" column="3" lean-forward="true" selection-start-line="95" selection-start-column="3" selection-end-line="95" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/layout_listaoportunidades.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="171" column="80" lean-forward="true" selection-start-line="171" selection-start-column="80" selection-end-line="171" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h5#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#4837#4861#0#HTML" expanded="true" />
+            <element signature="e#5090#5114#0#HTML" expanded="true" />
+            <element signature="e#5305#5348#0#HTML" expanded="true" />
+            <element signature="e#9022#9046#0#HTML" expanded="true" />
+            <element signature="e#9275#9299#0#HTML" expanded="true" />
+            <element signature="e#9490#9533#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="252" column="54" selection-start-line="252" selection-start-column="54" selection-end-line="252" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -1,0 +1,261 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block titulo %}Ver Oportunidad{% endblock titulo %}
+{% block extracss %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/oportunidades.css'%}" />
+
+{% endblock %}
+{% block contenido %}
+<div class="row">
+    <div class="col-12">
+                    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                        </div>
+                    </div>
+                </div>
+        <div class="card-body">
+            <div class="card-body">
+                <div class="card filter  {% if oportunidad.estado_oportunidad == 'A' %}card-outline-info {% elif oportunidad.estado_oportunidad == 'C' %}card-outline-warning{% else %}card-outline-danger{% endif %}">
+                    <div class="card-header">
+                        <h4 class="m-b-0 text-white oport-search">
+                        {%  if oportunidad.estado_oportunidad == 'A'%}
+                            Oportunidad Abierta
+                        {% elif oportunidad.estado_oportunidad == 'C' %}
+                            Oportunidad Cerrada
+                        {% else %}
+                            Oportunidad Archivada
+                        {% endif %}
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ oportunidad.titulo }}</h4>
+                                <h4 class="card-subtitle">{{ oportunidad.empresa.nombre }}</h4>
+                                <h6 class="card-subtitle"><i class="fas fa-map-marker-alt"></i><span
+                                        style="margin-left: 1%;">{{ oportunidad.direccion_map }}</span></h6>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body" style="text-align: end;">
+                                <h5 class="card-title">Fecha de Cierre</h5>
+                                <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span
+                                        style="margin-left: 1%;">{{ oportunidad.fecha_cese }}</span></h5>
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></button>
+                                <div class="dropdown-menu" style="margin-right: 10%;">
+
+                                    <a class="dropdown-item ver-oportunidad" data-id="{% url 'oportunidad:vista_previa' oportunidad.pk %}">Vista Previa</a>
+                                    {% if oportunidad.estado_oportunidad == 'A' %}
+                                    <a class="dropdown-item" href="#">Editar Oportunidad</a>
+                                    <a class="dropdown-item" href="#">Cerrar Oportunidad</a>
+                                    <a class="dropdown-item" href="#">Archivar Oportunidad</a>
+                                    {% elif oportunidad.estado_oportunidad == 'C' %}
+                                    <a class="dropdown-item" href="#">Editar Oportunidad</a>
+                                    <a class="dropdown-item" href="#">Abrir Oportunidad</a>
+                                    {% else %}
+                                     <a class="dropdown-item" href="#">Abrir Oportunidad</a>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-body">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-pills" role="tablist">
+                                        <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#postulantes-tab"
+                                                role="tab"><span class="hidden-sm-up"></span>
+                                                <span class="hidden-xs-down">Postulantes</span></a>
+                                        </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#recomendados-tab"
+                                                role="tab"><span class="hidden-sm-up"></span> <span
+                                                    class="hidden-xs-down">Recomendados</span></a>
+                                        </li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content tabcontent-border">
+                                        <div class="tab-pane active" id="postulantes-tab" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card-body">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">LISTA DE
+                                                                CANDIDATOS</h4>
+                                                            <h6 class="card-subtitle">Export data
+                                                                to Copy, CSV, Excel, PDF & Print</h6>
+                                                            <div class="table-responsive m-t-40">
+                                                                <table id="postulantes"
+                                                                    class="display nowrap table table-hover table-striped table-bordered"
+                                                                    cellspacing="0" width="100%">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Nombres y Apellidos</th>
+                                                                            <th>Centro Estudio</th>
+                                                                            <th>Carrera</th>
+                                                                            <th>Edad</th>
+                                                                            <th>Compatibilidad</th>
+                                                                            <th>Calificación</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                    {% for postulante in postulantes %}
+                                                                        <tr>
+
+                                                                            <td>{{ postulante.estudiante.persona.usuario.first_name }} {{ postulante.estudiante.persona.usuario.last_name }}</td>
+                                                                            <td>{{ postulante.estudiante.universidad.descripcion }}</td>
+                                                                            <td>{{ postulante.estudiante.carrera.descripcion }}</td>
+                                                                            <td>{{ edad_postulante }}</td>
+                                                                            <td>{{ compat_acedemica }}%</td>
+                                                                            <td>
+                                                                                  <div class="btn-group" data-toggle="buttons">
+                                                                                      <input value="{{ postulante.estudiante_calificacion }}" class="hide-input" id="{{ postulante.id }}" name="radio-hide" hidden/>
+                                                                                    <label class="btn btn-success btn-xs">
+                                                                                        <div class="custom-radio">
+
+                                                                                            <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id }}" class="custom-control-input" value="1">
+                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">Muy Bueno</label>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                    <label class="btn btn-warning btn-xs">
+                                                                                        <div class="custom-radio">
+                                                                                            <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id }}" class="custom-control-input" value="2">
+                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">Bueno</label>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                    <label class="btn btn-danger btn-xs">
+                                                                                        <div class="custom-radio">
+                                                                                            <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id }}" class="custom-control-input" value="3">
+                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">Regular</label>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="recomendados-tab" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card-body">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">LISTA DE
+                                                                RECOMENDADOS</h4>
+                                                            <h6 class="card-subtitle">Export data
+                                                                to Copy, CSV, Excel, PDF & Print</h6>
+                                                            <div class="table-responsive m-t-40">
+                                                                <table id="recomendados"
+                                                                    class="display nowrap table table-hover table-striped table-bordered"
+                                                                    cellspacing="0" width="100%">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Calificación</th>
+                                                                            <th>Nombres</th>
+                                                                            <th>Apellidos</th>
+                                                                            <th>Centro Estudio</th>
+                                                                            <th>Carrera</th>
+                                                                            <th>Edad</th>
+                                                                            <th>Compatibilidad</th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <span><img
+                                                                                        src="{% static 'img/circulo-verde.png'%}"
+                                                                                        alt=""> Muy
+                                                                                    Bueno</span>
+
+                                                                            </td>
+                                                                            <td>Roberto Carlos</td>
+                                                                            <td>Caceda Colon</td>
+                                                                            <td>USIL</td>
+                                                                            <td>Administración de
+                                                                                Empresas</td>
+                                                                            <td>21</td>
+                                                                            <td>90%</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><span><img
+                                                                                        src="{% static 'img/circulo-amarillo.png'%}"
+                                                                                        alt="">
+                                                                                    Bueno</span></td>
+                                                                            <td>Alex Steve</td>
+                                                                            <td>Cristobal Perez</td>
+                                                                            <td>UTP</td>
+                                                                            <td>Administración de
+                                                                                Empresas</td>
+                                                                            <td>22</td>
+                                                                            <td>70%</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><span><img
+                                                                                        src="{% static 'img/circulo-rojo.png'%}"
+                                                                                        alt="">
+                                                                                    Regular</span></td>
+                                                                            <td>Mariana Angela</td>
+                                                                            <td>Benitez Orosco</td>
+                                                                            <td>UPC</td>
+                                                                            <td>Administración de
+                                                                                Empresas</td>
+                                                                            <td>23</td>
+                                                                            <td>40%</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    {% endblock contenido %}
+
+    {% block extrajs %}
+    <script>
+        $('#postulantes, #recomendados').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+        $(document).ready(function () {
+                $(".ver-oportunidad").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+            });
+    </script>
+        <script src="{% static 'js/cambio-estado.js'%}"></script>
+        <script src="{% static 'js/DjangoAjax.js'%}"></script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+    {% endblock extrajs %}

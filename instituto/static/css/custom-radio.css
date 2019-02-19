@@ -1,0 +1,54 @@
+  /*Sección de radio buttons para califiacion*/
+.caca {
+  position: relative;
+  width: 14rem;
+  padding: 0 1rem;
+  font-family: verdana;
+}
+.caca:before {
+  content: '  ';
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 3rem;
+  background: #000;
+  border-radius: 30px;
+}
+.caca__label {
+  display: inline-block;
+  width: 2rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+}
+.caca__label:hover {
+  color: white;
+}
+.caca__indicator {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: -.5rem;
+  left: 0;
+  background: blue;
+  border-radius: 50%;
+  transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+  transform: translate3d(1rem, 0, 0);
+}
+.caca input#one:checked ~ .caca__indicator {
+  background: PaleGreen;
+  transform: translate3d(1.2rem, 0, 0);
+}
+.caca input#two:checked ~ .caca__indicator {
+  background: MediumTurquoise;
+  transform: translate3d(5.5rem, 0, 0);
+}
+.caca input#three:checked ~ .caca__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(10.6rem, 0, 0);
+}
+.caca input[type="radio"]:not(:checked), .caca input[type="radio"]:checked {
+  display: none;
+}
