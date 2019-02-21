@@ -143,10 +143,9 @@
 
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-
-                        <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="fas fa-home"></i><span class="hide-menu">Inicio </span></a>
-
+                        <li> <a class="waves-effect waves-dark" href="{% url 'oportunidad:index'%}"
+                                aria-expanded="false"><i class="fas fa-hand-paper"></i><span
+                                    class="hide-menu">Oportunidades</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{% url 'empresa:index'%}" aria-expanded="false"><i
                                     class="fas fa-tasks"></i></i><span class="hide-menu">Empresas</span></a>
@@ -154,10 +153,7 @@
                         <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i
                                     class="fas fa-search"></i><span class="hide-menu">Buscar CV's</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{% url 'oportunidad:index'%}"
-                                aria-expanded="false"><i class="fas fa-hand-paper"></i><span
-                                    class="hide-menu">Oportunidades</span></a>
-                        </li>
+
                         <li> <a class="waves-effect waves-dark" href="{% url 'usuario:index'%}" aria-expanded="false"><i
                                     class="fas fa-users-cog"></i><span class="hide-menu">Usuarios</span></a>
                         </li>

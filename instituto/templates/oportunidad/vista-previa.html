@@ -10,11 +10,27 @@
 <div class="media" style="border-style: none;">
   <img src="{% static 'img/circulo-rojo.png' %}" class="align-self-center mr-5" alt="..." width="100" height="100">
   <div class="media-body">
-            <h3><b>Controlador de Hornos - Horario Rotativo</b></h3>
-            <h5>COMPAÑÍA MINERA LUREN S.A.</h5>
-            <h5>LIMA, Perú</h5>
-            <h5>Remuneración: S./ 1111</h5>
-</div>
+            <h3><b>{{ oportunidad.titulo }}</b></h3>
+            <h5>{{ oportunidad.empresa.nombre | upper }}</h5>
+            <h5>{{ oportunidad.ciudad.descripcion | upper }}, {{ oportunidad.pais.descripcion }}</h5>
+            <h5>Remuneración: S./
+                {%if oportunidad.tipo_remuneracion == 'F' %}
+                    {{oportunidad.remuneracion_fija}}
+                {%elif oportunidad.tipo_remuneracion == 'I' %}
+                    {{oportunidad.remuneracion_min}} - {{oportunidad.remuneracion_max}}
+                {%else%}
+                    0
+                {%endif%}</h5>
+
+  </div>
+    <div class="row fecha">
+        <div class="col-sm-12">
+            <span class="text-color"><h5>Fecha de Cierre</h5></span>
+            <h6 class="text-color">{{ oportunidad.fecha_cese | date:"SHORT_DATE_FORMAT" }}</h6>
+        </div>
+
+
+    </div>
 </div>
     <div class="card-outline-info">
         <div class="card-header">
@@ -26,7 +42,7 @@
         <h5 >Tipo de vacante</h5>
     </div>
     <div class="col-sm-8">
-      <h6 class="text-color">Administrador</h6>
+      <h6 class="text-color">{{ oportunidad.tipo_puesto }}</h6>
     </div>
 
       </div>
@@ -36,7 +52,15 @@
       <h5>Jornada de trabajo</h5>
     </div>
     <div class="col-sm-8">
-      <h6 class="text-color">Full time</h6>
+      <h6 class="text-color">
+          {% if oportunidad.carga_horaria == 'PT' %}
+            Part Time
+          {% elif oportunidad.carga_horaria == 'FT' %}
+            Full Time
+          {% else %}
+              Sin especificar
+          {% endif %}
+      </h6>
     </div>
 
       </div>
@@ -46,15 +70,7 @@
       <h5>Resumen</h5>
     </div>
     <div class="col-sm-8">
-      <h6 class="text-color">Controlar la operación y verificar los parámetros de operación del los hornos de acuerdo con los parámetros de calidad y producción establecidos
-
-Verificar monitoreo mecánico y electrónico de la maquinaria
-
-Controlar los valores de temperatura, presión y dosificación de combustible
-
-Monitorear el pérfil de temperaturas del casco, polines a fin de tomar acciones cuando se desvian de los parámetros de control establecidos
-
-Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cumplimiento de las labores de equipo de trabajo a su cargor</h6>
+      <h6 class="text-color">{{ oportunidad.resumen }}</h6>
     </div>
 
       </div>
@@ -73,8 +89,9 @@ Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cum
         <h5>Rama Carrera</h5>
     </div>
     <div class="col-sm-8">
-      <h6 class="tag">Mantenimiento eléctrico y automatización</h6>
-        <h6 class="tag">MECÁNICA AUTOMOTRIZ</h6>
+        {% for carrera in oportunidad.rama_carrera.all %}
+            <h6 class="tag">{{ carrera }}</h6>
+        {% endfor %}
     </div>
 
       </div>
@@ -84,8 +101,9 @@ Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cum
       <h5>Conocimientos</h5>
     </div>
     <div class="col-sm-8">
-        <h6 class="tag">Microsoft Word - Básico</h6>
-        <h6 class="tag">Microsoft Excel - Básico</h6>
+        {% for conocimiento in oportunidad.conocimiento.all %}
+            <h6 class="tag">{{ conocimiento }}</h6>
+        {% endfor %}
     </div>
 
       </div>
@@ -95,7 +113,9 @@ Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cum
       <h5>Idiomas</h5>
     </div>
     <div class="col-sm-8">
-        <h6 class="tag">Inglés - Básico</h6>
+        {% for idioma in oportunidad.idioma.all %}
+            <h6 class="tag">{{ idioma }}</h6>
+        {% endfor %}
     </div>
 
       </div>
@@ -105,7 +125,9 @@ Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cum
       <h5>Graduación / Graduación estimada</h5>
     </div>
     <div class="col-sm-8">
-        <h6 class="tag">2do Semestre 2015 - 2do Semestre 2016</h6>
+        <h6 class="tag">
+            {{ oportunidad.graduacion_desde }} - {{ oportunidad.graduacion_hasta }}
+        </h6>
     </div>
 
       </div>
@@ -118,51 +140,16 @@ Realizar reporte párametros de trabajo, incidencias, paradas y Verificar el cum
         </div>
     <div class="card-body">
   <div class="row filas">
-    <div class="col-sm-12">
-      <h6 class="tag">Almuerzo</h6>
-        <h6 class="tag">Transporte</h6>
-
+      <div class="col-sm-12">
+          {% for beneficio in oportunidad.beneficio.all %}
+              <h6 class="tag">{{ beneficio }}</h6>
+        {% endfor %}
     </div>
       </div>
         </div>
 </div>
+    <div class="modal-footer">
+
+      <button type="button" class="btn btn-info  waves-effect" data-dismiss="modal">Cerrar</button>
+    </div>
 </div>
-
-
-
-{#                            <div class="card card-outline-info">#}
-{#                                <div class="card-header">#}
-{#                                     <h5 class="m-b-0 text-white">Controlador de Hornos - Horario Rotativo</h5>#}
-{#                                </div>#}
-{#                                <div class="card-body">#}
-{#                                <small class="text-muted">Email address</small>#}
-{#                                <h6>hannagover@gmail.com</h6> <small class="text-muted p-t-30 db">Phone</small>#}
-{#                                <h6>+91 654 784 547</h6> <small class="text-muted p-t-30 db">Address</small>#}
-{#                                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>#}
-{#                                 </div>#}
-{#                            </div>#}
-{#                            <div class="card card-outline-info">#}
-{#                                <div class="card-header">#}
-{#                                     <h5 class="m-b-0 text-white">Perfil del candidato</h5>#}
-{#                                </div>#}
-{#                                <div class="card-body">#}
-{#                                <small class="text-muted">Email address</small>#}
-{#                                <h6>hannagover@gmail.com</h6> <small class="text-muted p-t-30 db">Phone</small>#}
-{#                                <h6>+91 654 784 547</h6> <small class="text-muted p-t-30 db">Address</small>#}
-{#                                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>#}
-{#                                 </div>#}
-{#                            </div>#}
-{#                            <div class="card card-outline-info">#}
-{#                                <div class="card-header">#}
-{#                                     <h5 class="m-b-0 text-white">Beneficios</h5>#}
-{#                                </div>#}
-{#                                <div class="card-body">#}
-{#                                <small class="text-muted">Email address</small>#}
-{#                                <h6>hannagover@gmail.com</h6> <small class="text-muted p-t-30 db">Phone</small>#}
-{#                                <h6>+91 654 784 547</h6> <small class="text-muted p-t-30 db">Address</small>#}
-{#                                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>#}
-{#                                 </div>#}
-{#                            </div>#}
-    <!-- /.modal-content -->
-
-    <!-- /.modal-dialog -->

@@ -130,6 +130,7 @@ class RamaCarrera(models.Model):
         return self.descripcion
 
 class TipoCarrera(models.Model):
+
     descripcion = models.CharField(max_length=50, default=None, null=True, blank=True)
     total_ciclos = models.IntegerField(null= True, blank= True, verbose_name='total de ciclos')
 

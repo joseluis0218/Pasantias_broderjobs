@@ -4,12 +4,13 @@ $(document).ready(function()
     estado_empresa();
     enviar_calificacion_ajax();
     calificacion_estudiante();
+    visualizar_cv();
 });
 function enviar_ajax() {
 
 $(".checkbox").on( 'change', function() {
     var valor_id = $(this).attr("id");
-    console.log(valor_id);
+    // console.log(valor_id);
     if( $(this).is(':checked') ) {
 
         $.ajax({
@@ -63,17 +64,6 @@ function estado_empresa() {
 // }
 
 function enviar_calificacion_ajax() {
-        //   $("input:radio[name=customRadio]:checked").each(function () {
-        //       var valor_id = $(this).attr("id");
-        // var id = "#".concat(valor_id);
-        // var valor = $(id).val();
-        // console.log(valor);
-        //         });
-		// $("input[name=customRadio]").change(function () {
-		// 	alert($(this).val());
-		// 	});
-//
-
     $("input[name=radio-hide]").each(function () {
          var identificador = $(this).attr("id");
         // console.log(identificador);
@@ -102,12 +92,12 @@ function calificacion_estudiante() {
 
     $("input[name=radio-hide]").each(function () {
         var valor_id = $(this).attr("id");
-        console.log(valor_id);
+        // console.log(valor_id);
 
         var id = "#".concat(valor_id);
-        console.log(id);
+        // console.log(id);
         var valor = $(id).val();
-        console.log(valor);
+        // console.log(valor);
 
         if(valor === 'MB'){
             $("input[id ="+valor_id+"]").filter('[value=1]').attr('checked', true);
@@ -120,4 +110,23 @@ function calificacion_estudiante() {
 
         }
         });
+}
+
+function visualizar_cv() {
+
+
+            $("input[name=radio-hide]").each(function () {
+                var identificador = $(this).attr("id");
+                // console.log(identificador);
+
+                $(".ver-cv").on('click',function () {
+                    // alert("hola");
+                //     $.ajax({
+                //     url: "/oportunidad/ver_cv/6",
+                //     type: 'POST',
+                //
+                // });
+            });
+
+    });
 }

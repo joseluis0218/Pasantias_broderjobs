@@ -59,6 +59,8 @@ class PesoCompatibilidadOportunidad(models.Model):
 
 class Oportunidad(models.Model):
     items_estado = utils.estado_oportunidad()
+    items_remuneracion = utils.tipo_remuneracion()
+    items_jornada = utils.jornadas_trabajo()
     genero = utils.genero()
     anos_experiencia = utils.anos_experiencia()
     # periodo= []
@@ -67,12 +69,13 @@ class Oportunidad(models.Model):
 
     empresa = models.ForeignKey(Empresa, default=None, null=True, blank=True,on_delete=True)
     titulo = models.CharField(max_length=100, default=None, null=True, blank=True )
-    carga_horaria = models.ForeignKey(CargaHoraria, default=None, null=True, blank=True, verbose_name="Jornada Laboral",on_delete=True )
+    carga_horaria =  models.CharField(choices=items_jornada, max_length=2, default=None, null=True, blank=True,verbose_name="Jornada Laboral")
     pais = models.ForeignKey(Pais, null=True, blank=True,on_delete=True )
     ciudad = models.ForeignKey(Ciudad, null=True, blank=True,on_delete=True )
-    remuneracion = models.ForeignKey(TipoRemuneracion, default=None, null=True, blank=True, verbose_name="Remuneracion",on_delete=True )
-    remuneracion_min = models.CharField(max_length=50, default=None, null=True, blank=True,  )
-    remuneracion_max = models.CharField(max_length=50, default=None, null=True, blank=True )
+    tipo_remuneracion = models.CharField(choices=items_remuneracion, max_length=1, default=None, null=True, blank=True,verbose_name="Tipo de Remuneracion")
+    remuneracion_fija = models.CharField(max_length=50, default=None, null=True, blank=True)
+    remuneracion_min = models.CharField(max_length=50, default=None, null=True, blank=True)
+    remuneracion_max = models.CharField(max_length=50, default=None, null=True, blank=True)
     tipo_puesto = models.ForeignKey(TipoPuesto,default=None, null=True, blank=True, verbose_name="Tipo Puesto",on_delete=True)
     beneficio = models.ManyToManyField(Beneficio, default=None, blank=True, verbose_name="Beneficios")
     resumen = models.TextField(default=None, null=True, blank=True)
@@ -136,7 +139,7 @@ class Postulacion(models.Model):
     estado_postulacion =  models.CharField(choices=items_estado, max_length=1, default='A', null=True, blank=True)
     fase = models.ForeignKey(ProcesoFase, default=None, null=True, blank=True,on_delete=True)
     estado_fase =  models.CharField(choices=items_registro, max_length=1, default='A', null=True, blank=True)
-    estudiante_calificacion = models.CharField(choices=items_calificacion, max_length=2, default='SC', null=True,blank=True)  # nuevo campo de calificación, maneja 3 tipos de califaiciones.
+    calificacion = models.CharField(choices=items_calificacion, max_length=2, default='SC', null=True,blank=True)  # nuevo campo de calificación, maneja 3 tipos de califaiciones
     usuario_creacion = models.CharField(max_length=50, default=None, null=True, blank=True)
     fecha_creacion = models.DateField(default=None, null=True, blank=True)
     usuario_modificacion = models.CharField(max_length=50, default=None, null=True, blank=True)
@@ -176,7 +179,7 @@ class OportunidadCompatibilidad(models.Model):
         ordering = ["orden"]
 
     def __str__(self):
-	    return self.oportunidad.titulo
+	    return self.oportunidad.titulo+ '-'+self.estudiante.persona.usuario.first_name
 
 class ProcesoCompatibilidadOportunidades(models.Model):
     procesar = models.BooleanField(default=False, blank=True, verbose_name="Seleccione y guarde para procesar "

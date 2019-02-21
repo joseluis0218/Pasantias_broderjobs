@@ -1,0 +1,18 @@
+{% load widget_tweaks %}
+<div class="modal-header">
+
+    <h4 class="modal-title" id="myModalLabel">ACTIVAR OPORTUNIDAD</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+
+    <form id="eliminar-usuario" method="POST">
+        {% csrf_token %}
+        <h3 class="center">¿ Estas seguro de <strong>activar</strong> la oportunidad : <strong>"{{ oportunidad.titulo }}"</strong> ?</h3>
+        <p class="center">Al abrir la oportunidad los usuarios podrán postularse dentro del lapso de 10 días a partir de hoy, si desea modificar la fecha de cierre puede hacerlo en la opción editar oportunidad.</p>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-info" id="btn-enviar">Aceptar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+        </div>
+    </form>

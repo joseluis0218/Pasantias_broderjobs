@@ -1,4 +1,4 @@
-{% extends 'layouts/layout_listaoportunidades.html' %}
+{% extends 'layouts/base.html' %}
 {% load static %}
 
 {% block titulo %}Oportunidades{% endblock titulo %}
@@ -6,8 +6,6 @@
 {% block extracss %}
 <link href="{% static 'css/radio-button.css' %}" rel="stylesheet">
 {% endblock extracss %}
-
-
 
 {% block contenido%}
 <div class="container">
@@ -34,9 +32,9 @@
                 <div class="d-flex flex-row">
                     <div class="round round-lg align-self-center round-info"><i class="fas fa-briefcase"></i></div>
                     <div class="m-l-10 align-self-center">
-                        <h2 class="m-b-0 font-light text-center">{{ oport_abiertas.count }}</h2>
+                        <h2 class="m-b-0 font-light text-center">{{ cantidad_abiertas}}</h2>
                         <h5 class="text-muted m-b-0 text-center">
-                            {% if oport_abiertas == 1%}
+                            {% if cantidad_abiertas == 1%}
                             Oportunidad Abierta
                             {% else %}
                             Oportunidades Abiertas
@@ -70,9 +68,9 @@
                 <div class="d-flex flex-row">
                     <div class="round round-lg align-self-center round-warning"><i class="fas fa-briefcase"></i></div>
                     <div class="m-l-10 align-self-center text-center">
-                        <h2 class="m-b-0 font-lgiht">{{ oport_cerradas.count }}</h2>
+                        <h2 class="m-b-0 font-lgiht">{{ cantidad_cerradas }}</h2>
                         <h5 class="text-muted m-b-0">
-                            {% if oport_cerradas == 1%}
+                            {% if cantidad_cerradas == 1%}
                             Oportunidad Cerrada
                             {% else %}
                             Oportunidades Cerradas
@@ -111,9 +109,9 @@
                 <div class="d-flex flex-row">
                     <div class="round round-lg align-self-center round-danger"><i class="fas fa-briefcase"></i></div>
                     <div class="m-l-10 align-self-center text-center">
-                        <h3 class="m-b-0 font-lgiht">{{ oport_archivadas.count }}</h3>
+                        <h3 class="m-b-0 font-lgiht">{{ cantidad_archivadas }}</h3>
                         <h5 class="text-muted m-b-0">
-                            {% if oport_archivadas == 1%}
+                            {% if cantidad_archivadas == 1%}
                             Oportunidad Archivada
                             {% else %}
                             Oportunidades Archivadas
@@ -129,10 +127,8 @@
 </div>
     </div>
 
-
-
 <div class="container-fluid">
-{% for estado in estados %}
+{% for estado,estado_completo in estados %}
         <div class="row oport">
         <div class="col-12">
 
@@ -151,692 +147,35 @@
                             class="form-control form-control-sm">
                     </div>
                 </div>
-
                 <div class="card-body">
-                    {% if estado == 'A' %}
-                    {% for oport_abierta in oport_abiertas %}
-                        <div class="card filter">
-                        {% block lista1 %}
-                            {{ block.super }}
-                        {% endblock %}
-                        </div>
 
-{#                          <div class="card filter">#}
-{#                              <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="{% url 'oportunidad:ver_oportunidad' oportunidad.slug %}">{{ oportunidad.titulo }}</a></h4>#}
-{#                                    <h4 class="card-subtitle">{{ oportunidad.empresa.nombre }}s</h4>#}
-{##}
-{#                                </div>#}
-{##}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">{{ oportunidad.fecha_cese }}</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">1000</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">11</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">155</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        </div>#}
-                        {% endfor %}
-                        {% elif estado == 'C'%}
-                        {% for oport_cerrada in oport_cerradas %}
+            {% if estado == 'A' %}
+                    {% for oportunidad,calificacion in oport_abiertas %}
+                        <div class="card filter">
+                            {% include 'layouts/oportunidades_layout.html' %}
+                        </div>
+                    {% endfor %}
+            {% elif estado == 'C' %}
+                    {% for oportunidad,calificacion in oport_cerradas %}
                             <div class="card filter2">
-                        {% block lista2 %}
-                            {{ block.super }}
-                        {% endblock %}
+                            {% include 'layouts/oportunidades_layout.html' %}
                         </div>
-                        {% endfor %}
-                        {% elif estado == 'P' %}
-                        {% for oport_archivada in oport_archivadas %}
+                    {% endfor %}
+            {% elif estado == 'P' %}
+                    {% for oportunidad,calificacion in oport_archivadas %}
                             <div class="card filter3">
-                        {% block lista3 %}
-                            {{ block.super }}
-                        {% endblock %}
+                            {% include 'layouts/oportunidades_layout.html' %}
                         </div>
-                        {% endfor %}
-                        {% else %}
-                        <h3>No se encontraron oportunidades</h3>
+                    {% endfor %}
+            {% else %}
+                            <h3>No se encontraron oportunidades</h3>
                     </div>
             {% endif %}
             </div>
-
-
             </div>
         </div>
 </div>
 {% endfor %}
-    {#        <div class="row oport">#}
-{#        <div class="col-12">#}
-{##}
-{#            <div class="card card-outline-warning" style="margin-top:3%;">#}
-{##}
-{#                <div class="card-header">#}
-{#                    <h4 class="m-b-0 text-white oport-search">Oportunidades Cerradas</h4>#}
-{#                </div>#}
-{#                <div class="container-fluid">#}
-{#                    <div class="dataTables_filter">#}
-{#                        <label for=""> <b>Buscar : </b></label>#}
-{#                        <input type="text" placeholder="Oportunidades o Empresas" id="search2"#}
-{#                            class="form-control form-control-sm">#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="card-body">#}
-{#                    {% for oportunidad in oportunidades %}#}
-{#                    {% if oportunidad.estado_oportunidad == 'C' %}#}
-{#                    <div class="card filter2">#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="{% url 'oportunidad:ver_oportunidad' oportunidad.slug %}">{{ oportunidad.titulo }}</a></h4>#}
-{#                                    <h4 class="card-subtitle">{{ oportunidad.empresa.nombre }}s</h4>#}
-{##}
-{#                                </div>#}
-{##}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">{{ oportunidad.fecha_cese }}</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">1000</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">11</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">155</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                        {% endif %}#}
-{#                {% endfor %}#}
-{#                </div>#}
-{##}
-{#            </div>#}
-{##}
-{#        </div>#}
-{##}
-{#    </div>#}
-{#        <div class="row oport">#}
-{#        <div class="col-12">#}
-{##}
-{#            <div class="card card-outline-danger" style="margin-top:3%;">#}
-{##}
-{#                <div class="card-header">#}
-{#                    <h4 class="m-b-0 text-white oport-search">Oportunidades Archivadas</h4>#}
-{#                </div>#}
-{#                <div class="container-fluid">#}
-{#                    <div class="dataTables_filter">#}
-{#                        <label for=""> <b>Buscar : </b></label>#}
-{#                        <input type="text" placeholder="Oportunidades o Empresas" id="search3"#}
-{#                            class="form-control form-control-sm">#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="card-body">#}
-{#                    {% for oportunidad in oportunidades %}#}
-{#                    {% if oportunidad.estado_oportunidad == 'P' %}#}
-{#                    <div class="card filter3">#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="{% url 'oportunidad:ver_oportunidad' oportunidad.slug %}">{{ oportunidad.titulo }}</a></h4>#}
-{#                                    <h4 class="card-subtitle">{{ oportunidad.empresa.nombre }}s</h4>#}
-{##}
-{#                                </div>#}
-{##}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">{{ oportunidad.fecha_cese }}</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">1000</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">11</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">155</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                 {% endif %}#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{##}
-{#            </div>#}
-{##}
-{#        </div>#}
-{##}
-{#    </div>#}
-
-{##}
-{#    <div class="row oport">#}
-{#        <div class="col-12">#}
-{#            <div class="card card-outline-warning" style="margin-top:3%;">#}
-{#                <div class="card-header">#}
-{#                    <h4 class="m-b-0 text-white oport-search">Oportunidades Cerradas</h4>#}
-{#                </div>#}
-{#                <div class="container-fluid">#}
-{#                    <div class="dataTables_filter">#}
-{#                        <label for=""> <b>Buscar : </b></label>#}
-{#                        <input type="text" placeholder="Oportunidades o Empresas" id="search2"#}
-{#                            class="form-control form-control-sm">#}
-{#                    </div>#}
-{#                </div>#}
-{##}
-{##}
-{#                <div class="card-body">#}
-{#                    <div class="card filter2">#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="ver-oportunidad.html">Administrador de Empresas</a>#}
-{#                                    </h4>#}
-{#                                    <h4 class="card-subtitle">BroderJobs</h4>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">12/12/12</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">2376</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">1795</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">36870</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                    </div>#}
-{#                    <div class="card filter2" style="margin-top:2%;">#}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="ver-oportunidad.html">Ingeniero de Sistemas</a></h4>#}
-{#                                    <h4 class="card-subtitle">Tecsup</h4>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">12/12/12</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">2376</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">1795</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">36870</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#    </div>#}
-{##}
-{#    <div class="row oport">#}
-{#        <div class="col-12">#}
-{#            <div class="card card-outline-danger" style="margin-top:3%;">#}
-{#                <div class="card-header">#}
-{#                    <h4 class="m-b-0 text-white oport-search">Oportunidades Archivadas</h4>#}
-{#                </div>#}
-{#                <div class="container-fluid">#}
-{#                    <div class="dataTables_filter">#}
-{#                        <label for=""> <b>Buscar : </b></label>#}
-{#                        <input type="text" id="search3" placeholder="Oportunidades o Empresas"#}
-{#                            class=" form-control form-control-sm">#}
-{#                    </div>#}
-{#                </div>#}
-{##}
-{##}
-{#                <div class="card-body">#}
-{#                    <div class="card filter3">#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="ver-oportunidad.html">Administrador de Empresas</a>#}
-{#                                    </h4>#}
-{#                                    <h4 class="card-subtitle">BroderJobs</h4>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">12/12/12</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">2376</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">1795</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">36870</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                    </div>#}
-{#                    <div class="card filter3" style="margin-top:2%;">#}
-{#                        <div class="row">#}
-{#                            <div class="col">#}
-{#                                <div class="card-body">#}
-{#                                    <h4 class="card-title"><a href="ver-oportunidad.html">Ingeniero de Sistemas</a></h4>#}
-{#                                    <h4 class="card-subtitle">Tecsup</h4>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col">#}
-{#                                <div class="card-body" style="text-align: end;">#}
-{#                                    <h5 class="card-title">Fecha de Cierre</h5>#}
-{#                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span#}
-{#                                            style="margin-left: 1%;">12/12/12</span></h5>#}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                        </div>#}
-{#                        <div class="row" style="padding-left: 1%;padding-right: 1%;">#}
-{##}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{##}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-info">324</h1>#}
-{#                                            <h5 class="text-center">Nuevos candidatos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-success">2376</h1>#}
-{#                                            <h5 class="text-center">Muy buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-warning">1795</h1>#}
-{#                                            <h5 class="text-center">Buenos</h5>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <!-- Column -->#}
-{#                            <div class="col-md-6 col-lg-3">#}
-{#                                <div class="card card-body">#}
-{#                                    <!-- Row -->#}
-{#                                    <div class="row">#}
-{#                                        <!-- Column -->#}
-{#                                        <div class="col p-r-0 align-self-center">#}
-{#                                            <h1 class="font-light m-b-0 text-center text-danger">36870</h1>#}
-{#                                            <h5 class="text-center">Regulares</h5>#}
-{#                                        </div>#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
 
     {% endblock contenido %}
 

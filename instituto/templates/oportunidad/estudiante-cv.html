@@ -1,0 +1,225 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">VISTA PREVIA</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+
+    <div class="row justify-content-md-center mb-3">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-5">
+            <h4><b>{{ estudiante.persona.usuario.first_name }} {{ estudiante.persona.usuario.last_name }}</b></h4>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-download"></i></span>Descargar</button>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-3 col-sm-3 mb-3">
+    <img src="{% static 'img/circulo-rojo.png' %}" class="align-self-center" alt="..." width="120" height="120">
+    </div>
+    <div class="col-md-3 col-sm-3">
+                <div class="input-group mb-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text btn-info" id="basic-addon1"><i class="fas fa-phone"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" value="{% if estudiante.persona.telefono %}{{estudiante.persona.telefono}}  {% endif %}" aria-describedby="basic-addon1" disabled>
+</div>
+        <div class="input-group mb-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text btn-info" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Edad" aria-label="Username" value="{% if edad %}{{ edad }} años{% endif %}" aria-describedby="basic-addon1"  disabled>
+</div>
+    </div>
+
+    <div class="col-md-6 col-sm-6">
+                    <div class="input-group mb-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text btn-info" id="basic-addon1"><i class="far fa-envelope"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Email" aria-label="Username" value="{{ estudiante.persona.usuario.email }}" aria-describedby="basic-addon1"  disabled>
+</div>
+                    <div class="input-group mb-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text btn-info" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="Ubicación" aria-label="Username" value="{% if estudiante.ciudad %} {{estudiante.ciudad}}, {{estudiante.pais}}{% endif %}" aria-describedby="basic-addon1" disabled>
+</div>
+{#            <button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-download"></i></span>Descargar</button>#}
+    </div>
+</div>
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-info-circle icono"></i>Resumen</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+    <div class="col-sm-12">
+      <p>
+          {% if resumen %}
+              {{ resumen.descripcion }}
+          {% else %}
+              Sin completar
+          {% endif %}
+      </p>
+    </div>
+
+      </div>
+
+        </div>
+</div>
+
+
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-user-tie icono"></i>Experiencia Profesional</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+    <div class="col-sm-12">
+    {% if experiencias_profesionales %}
+        {% for experiencia in experiencias_profesionales %}
+        <div class="card">
+            <div class="card-body">
+                <h4>
+                    {%if experiencia.puesto%}
+                        {{experiencia.puesto}}
+                    {%else%}
+                        {{experiencia.puesto_referencial}}
+                    {%endif%}
+                </h4>
+                <h5 class="card-subtitle mb-4">
+                    {%if experiencia.empresa%}
+                        {{experiencia.empresa}}
+                    {%else%}
+                        {{experiencia.empresa_referencial}}
+                    {%endif%}
+                </h5>
+                <h5 class="card-subtitle" ><i class="far fa-calendar-alt icono"></i>
+                {{experiencia.fecha_desde|date:"M Y"}} - {% if experiencia.fecha_hasta %} {{experiencia.fecha_hasta|date:"M Y"}} {%else%} Es mi trabajo actual {%endif%}
+                </h5>
+            {% if experiencia.descripcion %}
+                <div class="dropdown">
+                    <a data-toggle="collapse" href="#descripcion{{ experiencia.id }}" role="button" aria-expanded="false" aria-controls="descripcion">Ver descripción <i class="fas fa-angle-double-down"></i></a>
+                <div class="collapse" id="descripcion{{ experiencia.id }}">
+                        <div class="card-body">
+                                {{ experiencia.descripcion }}
+                        </div>
+                </div>
+                </div>
+            {% endif %}
+
+            </div>
+        </div>
+        {% endfor %}
+                    {% else %}
+            No se especificaron experiencias profesionales
+        {% endif %}
+    </div>
+
+      </div>
+        </div>
+            <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-graduation-cap icono"></i>Educación</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{ estudiante.universidad }}</h3>
+                <p class="card-subtitle mb-3">Estudiante - {{ estudiante.semestre_actual }} ciclo</p>
+                <h5 class="card-subtitle mb-3" >{{ estudiante.carrera | upper }}</h5>
+                <h5 class="card-subtitle" ><i class="far fa-calendar-alt"></i>  {{ estudiante.ano_inicio_estudio }} -  {{ estudiante.ano_graduacion }}</h5>
+            </div>
+
+        </div>
+    </div>
+
+      </div>
+        </div>
+</div>
+        <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-book icono"></i>Conocimientos</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+      <div class="col-sm-12">
+          {% for conocimiento in estudiante.conocimiento.all %}
+          <h6 class="tag">{{ conocimiento }}</h6>
+          {% endfor %}
+    </div>
+      </div>
+        </div>
+                            </div>
+                    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-globe icono"></i></i>Idiomas</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+      <div class="col-sm-12">
+          {% for idioma in estudiante.idioma.all %}
+          <h6 class="tag">{{ idioma }}</h6>
+          {% endfor %}
+    </div>
+      </div>
+        </div>
+</div>
+                    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-calendar-check icono"></i>Actividades extra académicas</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+    <div class="col-sm-12">
+        {% for actividad in actividades_extras %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-4">{{ actividad.organizacion | upper }}</h4>
+                <p class="card-subtitle mb-4">{{ actividad.descripcion }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+      </div>
+        </div>
+</div>
+        <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-business-time icono"></i>Diponibilidad</h5>
+        </div>
+    <div class="card-body">
+  <div class="row filas">
+      <div class="col-sm-12">
+          <p>Acepto propuestas de:</p>
+          {% for tipo_puesto in estudiante.tipo_puesto.all %}
+              <h6 class="tag">{{ tipo_puesto.descripcion }}</h6>
+          {% endfor %}
+          <p>Carga Horaria:</p>
+          {% if estudiante.carga_horaria == 'PT' %}
+              <h6 class="tag">Part Time</h6>
+          {% elif estudiante.carga_horaria == 'FT' %}
+            <h6 class="tag">Full Time</h6>
+          {% else %}
+              Sin especificar
+          {% endif %}
+          <p>Remuneración Deseada:</p>
+          <h6 class="tag">S/. {{ estudiante.remuneracion }}</h6>
+    </div>
+      </div>
+        </div>
+</div>
+    <div class="modal-footer">
+
+      <button type="button" class="btn btn-info  waves-effect" data-dismiss="modal">Cerrar</button>
+    </div>
+</div>

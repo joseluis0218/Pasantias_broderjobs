@@ -1,18 +1,12 @@
-div .principal{
-    width: 100%;
-    border: 1px;
-    background-color: red;
-}
-div .izquierda{
-    width: 50%;
-    background-color: green;
-    float: left;
-}
 div .filas{
     padding-top: 2%;
 }
 .text-color{
     color: #818181;
+}
+.fecha {
+    text-align: center;
+    margin-top: 10px;
 }
 .icono{
     padding-right: 2%;

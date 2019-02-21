@@ -12,6 +12,7 @@ class Estudiante(models.Model):
     items_ciclo_carrera = utils.semestre_carrera()
     items_anos = utils.anos_rango()
     items_calificacion = utils.calificacion()
+    items_jornada = utils.jornadas_trabajo()
     persona = models.OneToOneField(Persona,on_delete=True)
     grado_estudio = models.ForeignKey(GradoEstudio,default=None, null=True, blank=True,on_delete=True )
     nivel_academico = models.ForeignKey(NivelAcademico,default=None, null=True, blank=True,on_delete=True )
@@ -26,7 +27,7 @@ class Estudiante(models.Model):
     pais = models.ForeignKey(Pais, default=None, null=True, blank=True,on_delete=True )
     ciudad = models.ForeignKey(Ciudad, default=None, null=True, blank=True,on_delete=True )
     distrito = models.ForeignKey(Distrito, default=None, null=True, blank=True,on_delete=True )
-    carga_horaria = models.ForeignKey(CargaHoraria,default=None,null=True, blank=True,on_delete=True )
+    carga_horaria =  models.CharField(choices=items_jornada, max_length=2, default=None, null=True, blank=True,verbose_name="Jornada Laboral")
     tipo_puesto = models.ManyToManyField(TipoPuesto, default=None, blank=True, verbose_name="Tipo Puesto")
     idioma = models.ManyToManyField(Idioma, default=None, blank=True, verbose_name="Idioma")
     conocimiento = models.ManyToManyField(Conocimiento, default=None, blank=True, verbose_name="Conocimiento")
@@ -35,7 +36,6 @@ class Estudiante(models.Model):
     foto_facebook_url =  models.URLField(default=None, null=True, blank=True)
     completo_test = models.BooleanField(default=False)
     correo_registro = models.BooleanField(default=False)
-
     fecha_creacion = models.DateField(default=datetime.now, null=True, blank=True)
     fecha_modificacion = models.DateField(default=datetime.now, null=True, blank=True)
     estado =  models.CharField(choices=items_registro, max_length=1, default='A', null=True, blank=True)
@@ -65,7 +65,7 @@ class Resumen(models.Model):
     estado =  models.CharField(choices=items_registro, max_length=1, default='A', null=True, blank=True)
 
     def __str__(self):
-	    return self.estudiante
+	    return self.estudiante.persona.usuario.first_name
 
 class ActividadesExtra(models.Model):
     estudiante =  models.ForeignKey(Estudiante,on_delete=True)
@@ -96,7 +96,7 @@ class ExperienciaProfesional(models.Model):
     estado =  models.CharField(choices=items_registro, max_length=1, default='A', null=True, blank=True)
 
     def __str__(self):
-	    return self.estudiante
+	    return self.puesto.descripcion
 
 class Voluntariado(models.Model):
     estudiante =  models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=True)

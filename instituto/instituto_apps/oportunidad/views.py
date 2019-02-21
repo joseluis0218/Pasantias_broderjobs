@@ -1,65 +1,70 @@
 from django.shortcuts import render,redirect
 from oportunidades.models import Oportunidad,Postulacion,OportunidadCompatibilidad
-from estudiante.models import Estudiante
+from estudiante.models import Estudiante,Resumen,ExperienciaProfesional,ActividadesExtra
 from main.utils import calular_edad,estado_oportunidad
 from main import utils
-# Create your views here.
-
-# def Principal(request):
-#
-#     return render(request, 'oportunidad/oportunidades.html')
-
+from datetime import date, datetime,timedelta,time
+from django.core.exceptions import ObjectDoesNotExist
 def ListarOportunidades(request):
 
-    oportunidades = Oportunidad.objects.all()
 
     oport_abiertas = Oportunidad.objects.filter(estado_oportunidad = 'A')
     oport_cerradas = Oportunidad.objects.filter(estado_oportunidad='C')
     oport_archivadas = Oportunidad.objects.filter(estado_oportunidad='P')
 
-    # postu_muybuenos = Postulacion.objects.filter(estudiante_calificacion = 'MB').count()
-    # postu_buenos = Postulacion.objects.filter(estudiante_calificacion = 'B').count()
-    # postu_buenos = Postulacion.objects.filter(estudiante_calificacion = 'B').count()
-    estados = ['A','C','P']
-    for estado in estados:
-        print(estado)
-    # print(estados)
-    for oportunidad in oportunidades:
-        estado_oportunidad = oportunidad.estado_oportunidad
-        # print(estado_oportunidad)
-            # if oportunidad.estado_oportunidad == 'A':
-            #     postu_muybuenos = Postulacion.objects.filter(oportunidad_id = oportunidad.id, estudiante_calificacion = 'MB').count()
-            #     print(postu_muybuenos)
+    cantidad_abiertas = oport_abiertas.count()
+    cantidad_cerradas = oport_cerradas.count()
+    cantidad_archivadas = oport_archivadas.count()
 
-    return render(request,'oportunidad/oportunidades.html',{'oportunidades':oportunidades,'estado_oportunidad':estado_oportunidad,'oport_abiertas':oport_abiertas,'estados':estados,'oport_cerradas':oport_cerradas,
-                                                            'oport_archivadas':oport_archivadas})
-                                                            # 'muybuenos':postu_muybuenos,'buenos':postu_buenos,'regulares':postu_regulares})
+    lista_abiertas = []
+    lista_cerradas = []
+    lista_archivadas = []
 
+    for oport_abierta in oport_abiertas:
+        postulantes_sv = Postulacion.objects.filter(oportunidad__id=oport_abierta.id, visto = 'False').count()
+        postulantes_mb = Postulacion.objects.filter(oportunidad__id = oport_abierta.id, calificacion = 'MB').count()
+        postulantes_b = Postulacion.objects.filter(oportunidad__id = oport_abierta.id, calificacion = 'B').count()
+        postulantes_r = Postulacion.objects.filter(oportunidad__id=oport_abierta.id, calificacion='R').count()
+        postulantes_sc = Postulacion.objects.filter(oportunidad__id=oport_abierta.id, calificacion='SC').count()
+        lista_abiertas.append([oport_abierta, [postulantes_sv,postulantes_mb,postulantes_b,postulantes_r,postulantes_sc]])
+    for oport_cerrada in oport_cerradas:
+        postulantes_sv = Postulacion.objects.filter(oportunidad__id=oport_cerrada.id, visto = 'False').count()
+        postulantes_mb = Postulacion.objects.filter(oportunidad__id = oport_cerrada.id, calificacion = 'MB').count()
+        postulantes_b = Postulacion.objects.filter(oportunidad__id = oport_cerrada.id, calificacion = 'B').count()
+        postulantes_r = Postulacion.objects.filter(oportunidad__id=oport_cerrada.id, calificacion='R').count()
+        postulantes_sc = Postulacion.objects.filter(oportunidad__id=oport_cerrada.id, calificacion='SC').count()
+        lista_cerradas.append([oport_cerrada, [postulantes_sv,postulantes_mb,postulantes_b,postulantes_r,postulantes_sc]])
+    for oport_archivada in oport_archivadas:
+        postulantes_sv = Postulacion.objects.filter(oportunidad__id=oport_archivada.id, visto = 'False').count()
+        postulantes_mb = Postulacion.objects.filter(oportunidad__id = oport_archivada.id, calificacion = 'MB').count()
+        postulantes_b = Postulacion.objects.filter(oportunidad__id = oport_archivada.id, calificacion = 'B').count()
+        postulantes_r = Postulacion.objects.filter(oportunidad__id=oport_archivada.id, calificacion='R').count()
+        postulantes_sc = Postulacion.objects.filter(oportunidad__id=oport_archivada.id, calificacion='SC').count()
+        lista_archivadas.append([oport_archivada, [postulantes_sv,postulantes_mb,postulantes_b,postulantes_r,postulantes_sc]])
+
+    return render(request,'oportunidad/oportunidades.html',{'cantidad_abiertas':cantidad_abiertas,'estados':estado_oportunidad,'cantidad_cerradas':cantidad_cerradas,'cantidad_archivadas':cantidad_archivadas, 'oport_abiertas': lista_abiertas, 'oport_cerradas': lista_cerradas, 'oport_archivadas': lista_archivadas})
 
 def VerOportunidad(request,slug):
     if request.method == 'GET':
          oportunidad = Oportunidad.objects.get(slug=slug)
-         postulantes = Postulacion.objects.filter(oportunidad_id = oportunidad.id, estado_postulacion = 'P').order_by('fecha_creacion')
-         compatibilidades = OportunidadCompatibilidad.objects.filter(oportunidad_id = oportunidad.id)
-         if(compatibilidades):
-             for compatibilidad in compatibilidades:
-                 compat_acedemica = compatibilidad.compatibilidad_academica
-         else:
-             compat_acedemica = 0
-         if (postulantes):
-            for postulante in postulantes:
-                fecha_nac = postulante.estudiante.persona.fecha_nacimiento
-                edad_postulante = calular_edad(fecha_nac)
+         postulaciones = Postulacion.objects.filter(oportunidad_id = oportunidad.id, estado_postulacion = 'P')
+         # print(postulaciones)
+         lista_compatibilidades = []
+         for postulacion in postulaciones:
+            compatibilidades = OportunidadCompatibilidad.objects.filter(estudiante_id = postulacion.estudiante.id)
+            for compatibilidad in compatibilidades:
+                fecha = postulacion.estudiante.persona.fecha_nacimiento
+                edad = calular_edad(fecha)
+                lista_compatibilidades.append([compatibilidad,postulacion,edad])
+                print(postulacion)
+            print(lista_compatibilidades)
 
-         else:
-             edad_postulante = 0
-    return render(request,'oportunidad/ver-oportunidad.html',{'oportunidad':oportunidad,'postulantes' : postulantes,'compat_acedemica':compat_acedemica,'edad_postulante' : edad_postulante})
+    return render(request,'oportunidad/ver-oportunidad.html',{'oportunidad':oportunidad,'postulantes':lista_compatibilidades})
 
 def VistaPrevia(request,id):
     if request.method == 'GET':
         oportunidad = Oportunidad.objects.get(id=id)
     return render(request, 'oportunidad/vista-previa.html',{'oportunidad':oportunidad})
-
 
 def CalificarPostulante(request,id,valor):
 
@@ -67,20 +72,72 @@ def CalificarPostulante(request,id,valor):
         print(request.POST)
         if request.is_ajax():
             postulante = Postulacion.objects.get(id=id)
+
             print(valor)
 
             if valor == 1:
                 print("cagon ctm")
-                postulante.estudiante_calificacion = 'MB'
+                postulante.calificacion = 'MB'
             elif valor == 2:
-                postulante.estudiante_calificacion = 'B'
+                postulante.calificacion = 'B'
             elif valor == 3:
-                postulante.estudiante_calificacion = 'R'
+                postulante.calificacion = 'R'
             else:
-                postulante.estudiante_calificacion = 'SC'
+                postulante.calificacion = 'SC'
 
             postulante.save()
-            print(postulante.estudiante_calificacion)
+            print(postulante.calificacion)
 
 
-    return redirect("oportunidad:index")
+def VerCv(request,id):
+
+    estudiante = Estudiante.objects.get(id = id)
+    postulacion = Postulacion.objects.get(estudiante__id=estudiante.id)
+    fecha_nac = estudiante.persona.fecha_nacimiento
+    experiencias_profesionales = ExperienciaProfesional.objects.filter(estudiante_id=estudiante.id).order_by('-fecha_desde')
+    actividades_extras = ActividadesExtra.objects.filter(estudiante_id = estudiante.id).order_by('-fecha_creacion')
+    print(experiencias_profesionales)
+    edad = calular_edad(fecha_nac)
+    try:
+        resumen = Resumen.objects.get(estudiante__id=estudiante.id)
+    except ObjectDoesNotExist as e:
+        resumen = None
+
+    if request.method == 'POST':
+        if request.is_ajax():
+            postulacion.visto = True
+            postulacion.save()
+    return render(request,'oportunidad/estudiante-cv.html',{'estudiante':estudiante,'resumen':resumen,'edad':edad,'experiencias_profesionales':experiencias_profesionales,'actividades_extras':actividades_extras})
+
+def AbrirOportunidad(request,id):
+    oportunidad = Oportunidad.objects.get(id = id)
+
+    print(date.today() + timedelta(days=10))
+    if request.method == 'POST':
+        oportunidad.estado_oportunidad = 'A'
+        oportunidad.fecha_cese = date.today() + timedelta(days=10)
+        oportunidad.save()
+        return redirect('oportunidad:index')
+    return render(request,'oportunidad/abrir-oportunidad.html',{'oportunidad':oportunidad})
+
+def CerrarOportunidad(request,id):
+    oportunidad = Oportunidad.objects.get(id = id)
+    if request.method == 'POST':
+        oportunidad.estado_oportunidad = 'C'
+        oportunidad.fecha_cese = date.today()
+
+        oportunidad.save()
+        return redirect('oportunidad:index')
+    return render(request,'oportunidad/cerrar-oportunidad.html',{'oportunidad':oportunidad})
+
+def ArchivarOportunidad(request,id):
+    oportunidad = Oportunidad.objects.get(id = id)
+    postulaciones = Postulacion.objects.filter(oportunidad__id = oportunidad.id)
+    print(postulaciones)
+    if request.method == 'POST':
+        oportunidad.estado_oportunidad = 'P'
+        for postulante in postulaciones:
+            postulante.delete()
+        oportunidad.save()
+        return redirect('oportunidad:index')
+    return render(request,'oportunidad/archivar-oportunidad.html',{'oportunidad':oportunidad})

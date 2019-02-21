@@ -48,16 +48,17 @@
                                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog"></i></button>
                                 <div class="dropdown-menu" style="margin-right: 10%;">
 
-                                    <a class="dropdown-item ver-oportunidad" data-id="{% url 'oportunidad:vista_previa' oportunidad.pk %}">Vista Previa</a>
+                                    <button class="dropdown-item ver-oportunidad" data-id="{% url 'oportunidad:vista_previa' oportunidad.pk %}">Vista Previa</button>
                                     {% if oportunidad.estado_oportunidad == 'A' %}
-                                    <a class="dropdown-item" href="#">Editar Oportunidad</a>
-                                    <a class="dropdown-item" href="#">Cerrar Oportunidad</a>
-                                    <a class="dropdown-item" href="#">Archivar Oportunidad</a>
+                                    <button class="dropdown-item" href="#">Editar Oportunidad</button>
+                                    <button class="dropdown-item cerrar-oportunidad" data-id="{% url 'oportunidad:cerrar_oportunidad' oportunidad.pk %}">Cerrar Oportunidad</button>
+                                    <button class="dropdown-item archivar-oportunidad" data-id="{% url 'oportunidad:archivar_oportunidad' oportunidad.pk %}">Archivar Oportunidad</button>
                                     {% elif oportunidad.estado_oportunidad == 'C' %}
-                                    <a class="dropdown-item" href="#">Editar Oportunidad</a>
-                                    <a class="dropdown-item" href="#">Abrir Oportunidad</a>
+                                    <button class="dropdown-item" href="#">Editar Oportunidad</button>
+                                    <button class="dropdown-item abrir-oportunidad" data-id="{% url 'oportunidad:abrir_oportunidad' oportunidad.pk %}">Abrir Oportunidad</button>
+                                    <button class="dropdown-item archivar-oportunidad" data-id="{% url 'oportunidad:archivar_oportunidad' oportunidad.pk %}">Archivar Oportunidad</button>
                                     {% else %}
-                                     <a class="dropdown-item" href="#">Abrir Oportunidad</a>
+                                     <button class="dropdown-item abrir-oportunidad" data-id="{% url 'oportunidad:abrir_oportunidad' oportunidad.pk %}">Abrir Oportunidad</button>
                                     {% endif %}
 
                                 </div>
@@ -71,12 +72,10 @@
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs nav-pills" role="tablist">
                                         <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#postulantes-tab"
-                                                role="tab"><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down">Postulantes</span></a>
+                                                role="tab">Postulantes</a>
                                         </li>
                                         <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#recomendados-tab"
-                                                role="tab"><span class="hidden-sm-up"></span> <span
-                                                    class="hidden-xs-down">Recomendados</span></a>
+                                                role="tab">Recomendados</a>
                                         </li>
                                     </ul>
                                     <!-- Tab panes -->
@@ -92,7 +91,7 @@
                                                                 to Copy, CSV, Excel, PDF & Print</h6>
                                                             <div class="table-responsive m-t-40">
                                                                 <table id="postulantes"
-                                                                    class="display nowrap table table-hover table-striped table-bordered"
+                                                                    class="display nowrap table table-hover table-striped table-bordered table-responsive"
                                                                     cellspacing="0" width="100%">
                                                                     <thead>
                                                                         <tr>
@@ -106,17 +105,20 @@
                                                                     </thead>
 
                                                                     <tbody>
-                                                                    {% for postulante in postulantes %}
+
+                                                                        {% for compatibilidad,postulante,edad in postulantes %}
                                                                         <tr>
 
-                                                                            <td>{{ postulante.estudiante.persona.usuario.first_name }} {{ postulante.estudiante.persona.usuario.last_name }}</td>
-                                                                            <td>{{ postulante.estudiante.universidad.descripcion }}</td>
+                                                                            <td><a class="ver-cv" href="#" data-id="{% url 'oportunidad:ver_cv' postulante.estudiante.id %}">{{ postulante.estudiante.persona.usuario.first_name }} {{ postulante.estudiante.persona.usuario.last_name }}</a></td>
+                                                                            <td>{{ postulante.estudiante.universidad.descripcion }} </td>
                                                                             <td>{{ postulante.estudiante.carrera.descripcion }}</td>
-                                                                            <td>{{ edad_postulante }}</td>
-                                                                            <td>{{ compat_acedemica }}%</td>
+                                                                            <td>{{ edad }}</td>
+                                                                            <td>{{ compatibilidad.compatibilidad_academica }}%</td>
                                                                             <td>
+
+
                                                                                   <div class="btn-group" data-toggle="buttons">
-                                                                                      <input value="{{ postulante.estudiante_calificacion }}" class="hide-input" id="{{ postulante.id }}" name="radio-hide" hidden/>
+                                                                                      <input value="{{ postulante.calificacion }}" class="hide-input" id="{{ postulante.id }}" name="radio-hide" hidden/>
                                                                                     <label class="btn btn-success btn-xs">
                                                                                         <div class="custom-radio">
 
@@ -126,8 +128,8 @@
                                                                                     </label>
                                                                                     <label class="btn btn-warning btn-xs">
                                                                                         <div class="custom-radio">
-                                                                                            <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id }}" class="custom-control-input" value="2">
-                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">Bueno</label>
+                                                                                            <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id}}" class="custom-control-input" value="2">
+                                                                                            <label class="custom-control-label" for="{{ postulante.id}}">Bueno</label>
                                                                                         </div>
                                                                                     </label>
                                                                                     <label class="btn btn-danger btn-xs">
@@ -137,6 +139,7 @@
                                                                                         </div>
                                                                                     </label>
                                                                                 </div>
+
                                                                             </td>
                                                                         </tr>
                                                                     {% endfor %}
@@ -251,6 +254,18 @@
         });
         $(document).ready(function () {
                 $(".ver-oportunidad").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+                $(".ver-cv").each(function () {
+                    $(this).modalForm({formURL: $(this).data('id')})
+                });
+                $(".cerrar-oportunidad").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+                $(".abrir-oportunidad").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+                $(".archivar-oportunidad").each(function () {
                      $(this).modalForm({formURL: $(this).data('id')});
                 });
             });

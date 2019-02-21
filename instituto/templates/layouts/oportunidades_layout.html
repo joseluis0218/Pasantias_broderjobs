@@ -1,0 +1,105 @@
+            <div class="row">
+                            <div class="col">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="{% url 'oportunidad:ver_oportunidad' oportunidad.slug %}">{{ oportunidad.titulo }}</a></h4>
+                                    <h4 class="card-subtitle">{{ oportunidad.empresa.nombre }}s</h4>
+
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <div class="card-body" style="text-align: end;">
+                                    <h5 class="card-title">Fecha de Cierre</h5>
+                                    <h5 class="card-subtitle"><i class="far fa-calendar-alt"></i><span
+                                            style="margin-left: 1%;">{{ oportunidad.fecha_cese }}</span></h5>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="padding-left: 1%;padding-right: 1%;">
+
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-body">
+                                    <!-- Row -->
+                                    <div class="row">
+
+                                        <!-- Column -->
+                                        <div class="col p-r-0 align-self-center">
+                                            <h1 class="font-light m-b-0 text-center text-info">{{ calificacion.0 }}</h1>
+                                            <h5 class="text-center">
+                                                {% if calificacion.0 == 1 %}
+                                                    Nuevo Candidato
+                                                {% else %}
+                                                Nuevos candidatos
+                                                {% endif %}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                                                            <!-- Row -->
+
+                            <div class="col-md-6 col-lg-3">
+
+                                <div class="card card-body">
+
+                                    <div class="row">
+                                        <!-- Column -->
+                                        <div class="col p-r-0 align-self-center">
+                                            <h1 class="font-light m-b-0 text-center text-success">{{ calificacion.1 }}</h1>
+                                            <h5 class="text-center">
+                                                {% if calificacion.1 == 1 %}
+                                                    Muy Bueno
+                                                {% else %}
+                                                Muy Buenos
+                                                {% endif %}</h5>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-body">
+                                    <!-- Row -->
+                                    <div class="row">
+                                        <!-- Column -->
+                                        <div class="col p-r-0 align-self-center">
+                                            <h1 class="font-light m-b-0 text-center text-warning"> {{ calificacion.2 }}</h1>
+                                            <h5 class="text-center">
+                                                {% if calificacion.2 == 1 %}
+                                                    Bueno
+                                                {% else %}
+                                                 Buenos
+                                                {% endif %}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card card-body">
+                                    <!-- Row -->
+                                    <div class="row">
+                                        <!-- Column -->
+                                        <div class="col p-r-0 align-self-center">
+                                            <h1 class="font-light m-b-0 text-center text-danger"> {{ calificacion.3 }}</h1>
+                                            <h5 class="text-center">
+                                                {% if calificacion.3 == 1 %}
+                                                    Regular
+                                                {% else %}
+                                                    Regulares
+                                                {% endif %}</h5>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
