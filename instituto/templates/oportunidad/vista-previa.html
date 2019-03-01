@@ -8,7 +8,7 @@
 <div class="modal-body">
 
 <div class="media" style="border-style: none;">
-  <img src="{% static 'img/circulo-rojo.png' %}" class="align-self-center mr-5" alt="..." width="100" height="100">
+  <img src="{% if oportunidad.empresa.logo %}{{ oportunidad.empresa.logo.url }}{% endif %}" class="align-self-center mr-5 rounded-circle" alt="{{ oportunidad.empresa.nombre}}" width="130" height="130">
   <div class="media-body">
             <h3><b>{{ oportunidad.titulo }}</b></h3>
             <h5>{{ oportunidad.empresa.nombre | upper }}</h5>

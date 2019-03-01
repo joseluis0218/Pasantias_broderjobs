@@ -2,33 +2,33 @@
 {% load static %}
 
 <div class="modal-header">
-    <h4 class="modal-title" id="myModalLabel">VISTA PREVIA</h4>
+    <h4 class="modal-title" id="myModalLabel">CV DE ESTUDIANTE</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 </div>
 <div class="modal-body">
 
-    <div class="row justify-content-md-center mb-3">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-5">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
             <h4><b>{{ estudiante.persona.usuario.first_name }} {{ estudiante.persona.usuario.last_name }}</b></h4>
         </div>
         <div class="col-sm-3">
             <button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-download"></i></span>Descargar</button>
         </div>
     </div>
+        <div class="media" style="border-style: none;">
+        <img src="{% if estudiante.foto %}{{ estudiante.foto.url }}{% endif %}" class="align-self-center mr-5 rounded-circle" alt="foto_estudiante" width="130" height="130">
 
+        <div class="media-body">
 <div class="row">
-    <div class="col-md-3 col-sm-3 mb-3">
-    <img src="{% static 'img/circulo-rojo.png' %}" class="align-self-center" alt="..." width="120" height="120">
-    </div>
-    <div class="col-md-3 col-sm-3">
+    <div class="col-md-4 col-sm-4">
                 <div class="input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text btn-info" id="basic-addon1"><i class="fas fa-phone"></i></span>
   </div>
   <input type="text" class="form-control" placeholder="Teléfono" aria-label="Username" value="{% if estudiante.persona.telefono %}{{estudiante.persona.telefono}}  {% endif %}" aria-describedby="basic-addon1" disabled>
 </div>
-        <div class="input-group mb-4">
+        <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text btn-info" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
   </div>
@@ -36,22 +36,24 @@
 </div>
     </div>
 
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-8 col-sm-8">
                     <div class="input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text btn-info" id="basic-addon1"><i class="far fa-envelope"></i></span>
   </div>
   <input type="text" class="form-control" placeholder="Email" aria-label="Username" value="{{ estudiante.persona.usuario.email }}" aria-describedby="basic-addon1"  disabled>
 </div>
-                    <div class="input-group mb-4">
+                    <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text btn-info" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
   </div>
   <input type="text" class="form-control" placeholder="Ubicación" aria-label="Username" value="{% if estudiante.ciudad %} {{estudiante.ciudad}}, {{estudiante.pais}}{% endif %}" aria-describedby="basic-addon1" disabled>
 </div>
-{#            <button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-download"></i></span>Descargar</button>#}
     </div>
 </div>
+            </div>
+  </div>
+
     <div class="card-outline-info">
         <div class="card-header">
             <h5 class="m-b-0 text-white titulo"><i class="fas fa-info-circle icono"></i>Resumen</h5>

@@ -66,7 +66,7 @@ function estado_empresa() {
 function enviar_calificacion_ajax() {
     $("input[name=radio-hide]").each(function () {
          var identificador = $(this).attr("id");
-        // console.log(identificador);
+        console.log(identificador);
 
     $("input[name=customRadio"+identificador+"]").on( 'change', function() {
 

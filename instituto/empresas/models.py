@@ -3,6 +3,7 @@ from users.models import User
 from main.models import Persona,Pais, Ciudad
 from datetime import date, datetime
 from main import utils
+from instituto.settings import STATIC_URL
 items_registro = utils.estado_registro()
 
 class Sector(models.Model):
@@ -96,6 +97,12 @@ class Empresa(models.Model):
 
     def __str__(self):
         return self.nombre
+    @property
+    def set_logo(self):
+        if self.logo:
+            return self.logo.url
+        else:
+            return STATIC_URL+"img/profile/profile_default.png"
 
 class Representante(models.Model):
 

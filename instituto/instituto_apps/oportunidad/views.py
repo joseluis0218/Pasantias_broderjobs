@@ -64,6 +64,7 @@ def VerOportunidad(request,slug):
 def VistaPrevia(request,id):
     if request.method == 'GET':
         oportunidad = Oportunidad.objects.get(id=id)
+
     return render(request, 'oportunidad/vista-previa.html',{'oportunidad':oportunidad})
 
 def CalificarPostulante(request,id,valor):
@@ -76,7 +77,6 @@ def CalificarPostulante(request,id,valor):
             print(valor)
 
             if valor == 1:
-                print("cagon ctm")
                 postulante.calificacion = 'MB'
             elif valor == 2:
                 postulante.calificacion = 'B'
@@ -88,25 +88,24 @@ def CalificarPostulante(request,id,valor):
             postulante.save()
             print(postulante.calificacion)
 
-
+    return redirect('oportunidad:index')
 def VerCv(request,id):
+    if request.method == 'GET':
+        estudiante = Estudiante.objects.get(id = id)
+        postulacion = Postulacion.objects.get(estudiante__id=estudiante.id)
+        fecha_nac = estudiante.persona.fecha_nacimiento
+        experiencias_profesionales = ExperienciaProfesional.objects.filter(estudiante_id=estudiante.id).order_by('-fecha_desde')
+        actividades_extras = ActividadesExtra.objects.filter(estudiante_id = estudiante.id).order_by('-fecha_creacion')
+        print(experiencias_profesionales)
+        edad = calular_edad(fecha_nac)
 
-    estudiante = Estudiante.objects.get(id = id)
-    postulacion = Postulacion.objects.get(estudiante__id=estudiante.id)
-    fecha_nac = estudiante.persona.fecha_nacimiento
-    experiencias_profesionales = ExperienciaProfesional.objects.filter(estudiante_id=estudiante.id).order_by('-fecha_desde')
-    actividades_extras = ActividadesExtra.objects.filter(estudiante_id = estudiante.id).order_by('-fecha_creacion')
-    print(experiencias_profesionales)
-    edad = calular_edad(fecha_nac)
-    try:
-        resumen = Resumen.objects.get(estudiante__id=estudiante.id)
-    except ObjectDoesNotExist as e:
-        resumen = None
-
-    if request.method == 'POST':
-        if request.is_ajax():
+        if postulacion.visto == False:
             postulacion.visto = True
             postulacion.save()
+        try:
+            resumen = Resumen.objects.get(estudiante__id=estudiante.id)
+        except ObjectDoesNotExist as e:
+            resumen = None
     return render(request,'oportunidad/estudiante-cv.html',{'estudiante':estudiante,'resumen':resumen,'edad':edad,'experiencias_profesionales':experiencias_profesionales,'actividades_extras':actividades_extras})
 
 def AbrirOportunidad(request,id):
