@@ -207,12 +207,8 @@
               <h6 class="tag">{{ tipo_puesto.descripcion }}</h6>
           {% endfor %}
           <p>Carga Horaria:</p>
-          {% if estudiante.carga_horaria == 'PT' %}
-              <h6 class="tag">Part Time</h6>
-          {% elif estudiante.carga_horaria == 'FT' %}
-            <h6 class="tag">Full Time</h6>
-          {% else %}
-              Sin especificar
+          {% if estudiante.carga_horaria %}
+              <h6 class="tag">{{ estudiante.carga_horaria }}</h6>
           {% endif %}
           <p>Remuneración Deseada:</p>
           <h6 class="tag">S/. {{ estudiante.remuneracion }}</h6>

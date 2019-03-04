@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import ListarOportunidades,VerOportunidad,VistaPrevia,CalificarPostulante,VerCv,AbrirOportunidad,CerrarOportunidad,ArchivarOportunidad
+from .views import ListarOportunidades,VerOportunidad,VistaPrevia,CalificarPostulante,VerCv,AbrirOportunidad,CerrarOportunidad,ArchivarOportunidad,EditarOportunidad
 urlpatterns = [
     path('', ListarOportunidades ,name = 'index'),
     path('ver_oportunidad/<slug:slug>', VerOportunidad ,name = 'ver_oportunidad'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('cerrar_oportunidad/<int:id>', CerrarOportunidad ,name = 'cerrar_oportunidad'),
     path('archivar_oportunidad/<int:id>', ArchivarOportunidad ,name = 'archivar_oportunidad'),
     path('ver_cv/<int:id>', VerCv ,name = 'ver_cv'),
+    path('editar_oportunidad/<int:id>', EditarOportunidad ,name = 'editar_oportunidad'),
 ]

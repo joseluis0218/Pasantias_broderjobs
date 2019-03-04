@@ -6828,7 +6828,7 @@ File: scss
 
 /* Radio Buttons
    ========================================================================== */
-[type="radio"]:not(:checked),
+[type="radio"]:not(:checked,.none),
 [type="radio"]:checked {
   position: absolute;
   left: -9999px;

@@ -2,9 +2,12 @@ from django.shortcuts import render,redirect
 from oportunidades.models import Oportunidad,Postulacion,OportunidadCompatibilidad
 from estudiante.models import Estudiante,Resumen,ExperienciaProfesional,ActividadesExtra
 from main.utils import calular_edad,estado_oportunidad
+from .forms import OportunidadForm,OportunidadCrearForm
 from main import utils
 from datetime import date, datetime,timedelta,time
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
+from django.utils.text import slugify
 def ListarOportunidades(request):
 
 
@@ -140,3 +143,20 @@ def ArchivarOportunidad(request,id):
         oportunidad.save()
         return redirect('oportunidad:index')
     return render(request,'oportunidad/archivar-oportunidad.html',{'oportunidad':oportunidad})
+
+
+def EditarOportunidad(request, id):
+    form = None
+    oportunidad = Oportunidad.objects.get(id=id)
+    if request.method == 'GET':
+        form = OportunidadForm(instance=oportunidad)
+    else:
+        form = OportunidadForm(request.POST, instance=oportunidad)
+        if not request.is_ajax():
+            if form.is_valid():
+                oportunidad.slug = slugify(oportunidad.titulo)
+                form.save()
+                print(request.POST)
+                messages.add_message(request, messages.SUCCESS, 'Oportunidad actualizada correctamente')
+            return redirect("oportunidad:index")
+    return render(request,'oportunidad/editar-oportunidad.html',{'form': form})

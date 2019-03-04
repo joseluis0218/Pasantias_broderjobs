@@ -4,7 +4,6 @@
 {% block titulo %}Ver Oportunidad{% endblock titulo %}
 {% block extracss %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/oportunidades.css'%}" />
-
 {% endblock %}
 {% block contenido %}
 <div class="row">
@@ -50,11 +49,11 @@
 
                                     <button class="dropdown-item ver-oportunidad" data-id="{% url 'oportunidad:vista_previa' oportunidad.pk %}">Vista Previa</button>
                                     {% if oportunidad.estado_oportunidad == 'A' %}
-                                    <button class="dropdown-item" href="#">Editar Oportunidad</button>
+                                    <button class="dropdown-item editar-oportunidad" data-id="{% url 'oportunidad:editar_oportunidad' oportunidad.pk%}">Editar Oportunidad</button>
                                     <button class="dropdown-item cerrar-oportunidad" data-id="{% url 'oportunidad:cerrar_oportunidad' oportunidad.pk %}">Cerrar Oportunidad</button>
                                     <button class="dropdown-item archivar-oportunidad" data-id="{% url 'oportunidad:archivar_oportunidad' oportunidad.pk %}">Archivar Oportunidad</button>
                                     {% elif oportunidad.estado_oportunidad == 'C' %}
-                                    <button class="dropdown-item" href="#">Editar Oportunidad</button>
+                                    <button class="dropdown-item editar-oportunidad" data-id="{% url 'oportunidad:editar_oportunidad' oportunidad.pk %}">Editar Oportunidad</button>
                                     <button class="dropdown-item abrir-oportunidad" data-id="{% url 'oportunidad:abrir_oportunidad' oportunidad.pk %}">Abrir Oportunidad</button>
                                     <button class="dropdown-item archivar-oportunidad" data-id="{% url 'oportunidad:archivar_oportunidad' oportunidad.pk %}">Archivar Oportunidad</button>
                                     {% else %}
@@ -123,7 +122,7 @@
                                                                                         <div class="custom-radio">
 
                                                                                             <input type="radio" id="{{ postulante.id }}" name="customRadio{{ postulante.id }}" class="custom-control-input" value="1">
-                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">Muy Bueno</label>
+                                                                                            <label class="custom-control-label" for="{{ postulante.id }}">MuyBueno</label>
                                                                                         </div>
                                                                                     </label>
                                                                                     <label class="btn btn-warning btn-xs">
@@ -266,6 +265,9 @@
                      $(this).modalForm({formURL: $(this).data('id')});
                 });
                 $(".archivar-oportunidad").each(function () {
+                     $(this).modalForm({formURL: $(this).data('id')});
+                });
+                $(".editar-oportunidad").each(function () {
                      $(this).modalForm({formURL: $(this).data('id')});
                 });
             });

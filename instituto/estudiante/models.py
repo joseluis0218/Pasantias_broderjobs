@@ -12,22 +12,21 @@ class Estudiante(models.Model):
     items_ciclo_carrera = utils.semestre_carrera()
     items_anos = utils.anos_rango()
     items_calificacion = utils.calificacion()
-    items_jornada = utils.jornadas_trabajo()
-    persona = models.OneToOneField(Persona,on_delete=True)
-    grado_estudio = models.ForeignKey(GradoEstudio,default=None, null=True, blank=True,on_delete=True )
-    nivel_academico = models.ForeignKey(NivelAcademico,default=None, null=True, blank=True,on_delete=True )
-    universidad = models.ForeignKey(Universidad,default=None, null=True, blank=True,on_delete=True )
-    carrera = models.ForeignKey(Carrera, default=None, null=True, blank=True,on_delete=True )
+    persona = models.OneToOneField(Persona,on_delete=models.CASCADE)
+    grado_estudio = models.ForeignKey(GradoEstudio,default=None, null=True, blank=True,on_delete=models.CASCADE )
+    nivel_academico = models.ForeignKey(NivelAcademico,default=None, null=True, blank=True,on_delete=models.CASCADE )
+    universidad = models.ForeignKey(Universidad,default=None, null=True, blank=True,on_delete=models.CASCADE )
+    carrera = models.ForeignKey(Carrera, default=None, null=True, blank=True,on_delete=models.CASCADE )
     carrera_referencial = models.CharField(max_length=100, default=None, null=True, blank=True)
     semestre_actual = models.CharField(choices=items_ciclo_carrera, max_length=2, default=None, null=True, blank=True, )
     semestre_inicio_estudio = models.CharField(choices=items_ciclo,max_length=2, default=None, null=True, blank=True)
     ano_inicio_estudio = models.CharField(choices=items_anos, max_length=4, default=None, null=True,  blank=True, )
     semestre_graduacion = models.CharField(choices=items_ciclo, max_length=2, default=None, null=True, blank=True, )
     ano_graduacion= models.CharField(choices=items_anos, max_length=4, default=None, null=True, blank=True)
-    pais = models.ForeignKey(Pais, default=None, null=True, blank=True,on_delete=True )
-    ciudad = models.ForeignKey(Ciudad, default=None, null=True, blank=True,on_delete=True )
-    distrito = models.ForeignKey(Distrito, default=None, null=True, blank=True,on_delete=True )
-    carga_horaria =  models.CharField(choices=items_jornada, max_length=2, default=None, null=True, blank=True,verbose_name="Jornada Laboral")
+    pais = models.ForeignKey(Pais, default=None, null=True, blank=True,on_delete=models.CASCADE )
+    ciudad = models.ForeignKey(Ciudad, default=None, null=True, blank=True,on_delete=models.CASCADE )
+    distrito = models.ForeignKey(Distrito, default=None, null=True, blank=True,on_delete=models.CASCADE )
+    carga_horaria = models.ForeignKey(CargaHoraria,default=None,null=True, blank=True,on_delete=models.CASCADE)
     tipo_puesto = models.ManyToManyField(TipoPuesto, default=None, blank=True, verbose_name="Tipo Puesto")
     idioma = models.ManyToManyField(Idioma, default=None, blank=True, verbose_name="Idioma")
     conocimiento = models.ManyToManyField(Conocimiento, default=None, blank=True, verbose_name="Conocimiento")
@@ -57,7 +56,7 @@ class Estudiante(models.Model):
 
 
 class Resumen(models.Model):
-    estudiante =  models.ForeignKey(Estudiante,on_delete=True)
+    estudiante =  models.ForeignKey(Estudiante,on_delete=models.CASCADE)
     descripcion = models.TextField(default=None, null=True, blank=True)
 
     fecha_creacion = models.DateField(default=datetime.now, null=True, blank=True)
@@ -68,7 +67,7 @@ class Resumen(models.Model):
 	    return self.estudiante.persona.usuario.first_name
 
 class ActividadesExtra(models.Model):
-    estudiante =  models.ForeignKey(Estudiante,on_delete=True)
+    estudiante =  models.ForeignKey(Estudiante,on_delete=models.CASCADE)
     descripcion = models.TextField(default=None, null=True, blank=True)
     organizacion = models.CharField(max_length=50, default=None, null=True, blank=True)
 
@@ -80,11 +79,11 @@ class ActividadesExtra(models.Model):
 	    return self.descripcion
 
 class ExperienciaProfesional(models.Model):
-    estudiante =  models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=True)
-    puesto = models.ForeignKey(Puesto, default=None, null=True, blank=True,on_delete=True)
-    area_experiencia =  models.ForeignKey(AreaExpeiencia, default=None, null=True, blank=True,on_delete=True)
+    estudiante =  models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=models.CASCADE)
+    puesto = models.ForeignKey(Puesto, default=None, null=True, blank=True,on_delete=models.CASCADE)
+    area_experiencia =  models.ForeignKey(AreaExpeiencia, default=None, null=True, blank=True,on_delete=models.CASCADE)
     puesto_referencial = models.CharField(max_length=50, default=None, null=True)
-    empresa = models.ForeignKey(Empresa, default=None, null=True, blank=True,on_delete=True)
+    empresa = models.ForeignKey(Empresa, default=None, null=True, blank=True,on_delete=models.CASCADE)
     empresa_referencial = models.CharField(max_length=50, default=None, null=True)
     fecha_desde = models.DateField(default=None, null=True, blank=True)
     fecha_hasta = models.DateField(default=None, null=True, blank=True)
@@ -99,7 +98,7 @@ class ExperienciaProfesional(models.Model):
 	    return self.puesto.descripcion
 
 class Voluntariado(models.Model):
-    estudiante =  models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=True)
+    estudiante =  models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=models.CASCADE)
     cargo = models.CharField(max_length=50, default=None, null=True, blank=True)
     organizacion = models.CharField(max_length=50, default=None, null=True, blank=True)
     fecha_desde = models.DateField(null=True)
@@ -117,7 +116,7 @@ class Voluntariado(models.Model):
 
 class ConocimientoExtra(models.Model):
     descripcion = models.CharField(max_length=50, default=None, null=True, blank=True)
-    estudiante = models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=True)
+    estudiante = models.ForeignKey(Estudiante, default=None, null=True, blank=True,on_delete=models.CASCADE)
     orden = models.IntegerField(null= True, blank= True)
     fecha_creacion = models.DateField(default=datetime.now, null=True, blank=True)
     fecha_modificacion = models.DateField(default=datetime.now, null=True, blank=True)

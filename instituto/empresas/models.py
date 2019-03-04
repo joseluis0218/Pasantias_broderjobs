@@ -72,12 +72,12 @@ class Empresa(models.Model):
     quienes_somos = models.CharField(max_length=1000, default=None, null=True, blank=True)
     telefono = models.CharField(max_length=100, default=None, null=True, blank=True)
     RUC = models.CharField(max_length=20, default=None, null=True, blank=True)
-    sector = models.ForeignKey(Sector, default=None, null=True, blank=True,on_delete=True)
-    numero_funcionarios = models.ForeignKey(NumeroFuncionarios, default=None, null=True, blank=True,on_delete=True)
-    facturacion_anual = models.ForeignKey(FacturacionAnual, default=None, null=True, blank=True,on_delete=True)
+    sector = models.ForeignKey(Sector, default=None, null=True, blank=True,on_delete=models.CASCADE)
+    numero_funcionarios = models.ForeignKey(NumeroFuncionarios, default=None, null=True, blank=True,on_delete=models.CASCADE)
+    facturacion_anual = models.ForeignKey(FacturacionAnual, default=None, null=True, blank=True,on_delete=models.CASCADE)
     ano_fundacion =  models.CharField(max_length=10, default=None, null=True, blank=True)
-    pais = models.ForeignKey(Pais, default=None, null=True, blank=True,on_delete=True)
-    ciudad = models.ForeignKey(Ciudad, default=None, null=True, blank=True,on_delete=True)
+    pais = models.ForeignKey(Pais, default=None, null=True, blank=True,on_delete=models.CASCADE)
+    ciudad = models.ForeignKey(Ciudad, default=None, null=True, blank=True,on_delete=models.CASCADE)
     website = models.CharField(max_length=50, default=None, null=True, blank=True)
     logo = models.ImageField('logo', upload_to='img/%Y/%m/%d', null=True, blank=True)
     direccion_map = models.CharField(max_length=100, default=None, null=True, blank=True)
@@ -106,8 +106,8 @@ class Empresa(models.Model):
 
 class Representante(models.Model):
 
-    persona = models.OneToOneField(Persona,on_delete=True)
-    empresa = models.ForeignKey(Empresa,on_delete=True)
+    persona = models.OneToOneField(Persona,on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa,on_delete=models.CASCADE)
     administrador = models.BooleanField(default=False, blank=True)
     usuario_broder = models.BooleanField(default=False, blank=True)
 
@@ -121,7 +121,7 @@ class Representante(models.Model):
         return self.usuario_creacion
 
 class EmpresaDivision(models.Model):
-    empresa = models.ForeignKey(Empresa,on_delete=True)
+    empresa = models.ForeignKey(Empresa,on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=50)
 
     fecha_creacion = models.DateField(default=datetime.now, null=True, blank=True)

@@ -117,16 +117,6 @@ def calificacion():
     calificaciones.append(('MB', 'Muy Bueno'))
     calificaciones.append(('R', 'Regular'))
     return calificaciones
-def tipo_remuneracion():
-    remuneraciones = []
-    remuneraciones.append(('F', 'Fijo'))
-    remuneraciones.append(('I', 'Intervalo'))
-    return remuneraciones
-def jornadas_trabajo():
-    jornadas = []
-    jornadas.append(('PT', 'Part time'))
-    jornadas.append(('FT', 'Full time'))
-    return jornadas
 def rango_de_meses(fecha1, fecha2):
         return (fecha2.year - fecha1.year)*12 + fecha2.month - fecha1.month
 

@@ -14,12 +14,12 @@
             <h5>{{ oportunidad.empresa.nombre | upper }}</h5>
             <h5>{{ oportunidad.ciudad.descripcion | upper }}, {{ oportunidad.pais.descripcion }}</h5>
             <h5>Remuneración: S./
-                {%if oportunidad.tipo_remuneracion == 'F' %}
-                    {{oportunidad.remuneracion_fija}}
-                {%elif oportunidad.tipo_remuneracion == 'I' %}
+                {%if oportunidad.remuneracion.descripcion == 'Fijo' %}
+                    {{ oportunidad.remuneracion_min }}
+                {%elif oportunidad.remuneracion.descripcion == 'Intervalo' %}
                     {{oportunidad.remuneracion_min}} - {{oportunidad.remuneracion_max}}
                 {%else%}
-                    0
+                    {{ oportunidad.remuneracion }}
                 {%endif%}</h5>
 
   </div>
@@ -53,10 +53,8 @@
     </div>
     <div class="col-sm-8">
       <h6 class="text-color">
-          {% if oportunidad.carga_horaria == 'PT' %}
-            Part Time
-          {% elif oportunidad.carga_horaria == 'FT' %}
-            Full Time
+          {% if oportunidad.carga_horaria  %}
+            {{ oportunidad.carga_horaria }}
           {% else %}
               Sin especificar
           {% endif %}

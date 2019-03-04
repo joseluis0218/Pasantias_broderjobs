@@ -8,6 +8,14 @@
 {% endblock extracss %}
 
 {% block contenido%}
+    <div id="results">
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissable" {% endif %}>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>{{ message }}</h4>
+    </div>
+    {% endfor %}
+</div>
 <div class="container">
 <div class="row">
     <!-- Column -->

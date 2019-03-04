@@ -1,0 +1,519 @@
+{% load widget_tweaks %}
+{% load static %}
+
+{% block extracss %}
+    <style>
+            li{
+                list-style: none;
+            }
+
+            label{
+                padding-right: 25px;
+
+            }
+    </style>
+    <link href="{% static 'css/select2.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/switchery.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap-tagsinput.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <link href="{% static 'css/jquery.bootstrap-touchspin.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/multi-select.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">VISTA PREVIA</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+<h4>Los campos marcados con (*) son obligatorios
+</h4>
+<form method="POST">
+{% csrf_token %}
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-info-circle icono"></i>Perfil de la Oportunidad</h5>
+        </div>
+    <div class="card-body">
+
+        <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Título de vacante</label>
+            </div>
+            <div class="col-sm-8">
+                {% render_field form.titulo %}
+                <div class="{% if form.titulo.errors %} invalid{% endif %}">
+                {% for error in form.titulo.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Número de Vacantes</label>
+            </div>
+            <div class="col-sm-8">
+                {% render_field form.numero_vacantes %}
+                <div class="{% if form.numero_vacantes.errors %} invalid{% endif %}">
+                {% for error in form.numero_vacantes.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Experiencia</label>
+            </div>
+            <div class="row col-sm-8">
+            <div class="col-sm-6">
+                {% render_field form.area_experiencia %}
+                <div class="{% if form.area_experiencia.errors %} invalid{% endif %}">
+                {% for error in form.area_experiencia.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {% render_field form.tiempo_experiencia %}
+                <div class="{% if form.tiempo_experiencia.errors %} invalid{% endif %}">
+                {% for error in form.tiempo_experiencia.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+
+            </div>
+            </div>
+        </div>
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Jornada de trabajo</label>
+            </div>
+            <div class="col-sm-8">
+            <div class="form-check form-check-inline">
+                {% for carga in form.carga_horaria %}
+                    {% render_field carga %}
+                {% endfor %}
+            </div>
+                <div class="{% if form.carga_horaria.errors %} invalid{% endif %}">
+                {% for error in form.carga_horaria.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+            </div>
+
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Localización</label>
+            </div>
+            <div class="row col-sm-8">
+            <div class="col-sm-6">
+                {% render_field form.pais %}
+                <div class="{% if form.pais.errors %} invalid{% endif %}">
+                {% for error in form.pais.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {% render_field form.ciudad %}
+                <div class="{% if form.ciudad.errors %} invalid{% endif %}">
+                {% for error in form.ciudad.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Remuneración</label>
+            </div>
+            <div class="col-sm-8">
+            <div class="form-check form-check-inline">
+                {% for remuneracion in form.remuneracion %}
+                    {% render_field remuneracion %}
+                {% endfor %}
+                </div>
+                <div class="{% if form.remuneracion.errors %} invalid{% endif %}">
+                {% for error in form.remuneracion.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+
+        </div>
+    <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="row col-sm-8">
+            <div class="col-sm-6">
+                {% render_field form.remuneracion_min %}
+                     <small class="form-text text-muted">Esta información no será publicada.</small>
+            </div>
+            <div class="col-sm-6">
+                {% render_field form.remuneracion_max %}
+            </div>
+                    </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Fecha de cierre</label>
+            </div>
+
+            <div class="col-sm-8">
+                {% render_field form.fecha_cese %}
+                <div class="{% if form.fecha_cese.errors %} invalid{% endif %}">
+                {% for error in form.fecha_cese.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-user-tie icono"></i>Información Básica</h5>
+        </div>
+    <div class="card-body">
+          <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Tipo de Vacante *</label>
+            </div>
+            <div class="col-sm-8">
+            <div class="form-check form-check">
+                {% for puesto in form.tipo_puesto %}
+                    {% render_field puesto %}
+                {% endfor %}
+            </div>
+                <div class="{% if form.tipo_puesto.errors %} invalid{% endif %}">
+                {% for error in form.tipo_puesto.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+
+            </div>
+        </div>
+              <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Funciones del puesto * </label>
+            </div>
+            </div>
+            <div class="col-sm-12">
+                {% render_field form.resumen %}
+                <div class="{% if form.resumen.errors %} invalid{% endif %}">
+                {% for error in form.resumen.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+
+        </div>
+ </div>
+    </div>
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-user-tie icono"></i>Perfil del candidato</h5>
+        </div>
+    <div class="card-body">
+     <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Rango de Edad</label>
+            </div>
+            <div class="row col-sm-8">
+            <div class="col-sm-6">
+                {% render_field form.edad_desde %}
+                <div class="{% if form.edad_desde.errors %} invalid{% endif %}">
+                {% for error in form.edad_desde.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {% render_field form.edad_hasta %}
+                <div class="{% if form.edad_hasta.errors %} invalid{% endif %}">
+                {% for error in form.edad_hasta.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+
+            </div>
+            </div>
+        </div>
+              <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Género</label>
+            </div>
+            <div class="col-sm-8">
+                {% render_field form.genero %}
+                <div class="{% if form.genero.errors %} invalid{% endif %}">
+                {% for error in form.genero.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Grado de estudio * </label>
+            </div>
+            <div class="col-sm-8">
+            <div class="form-check form-check-inline">
+                {% for grado in form.grado_estudio %}
+                    {% render_field grado %}
+                {% endfor %}
+                </div>
+            <small class="form-text text-muted">Puede seleccionar múltiples valores</small>
+                <div class="{% if form.grado_estudio.errors %} invalid{% endif %}">
+                {% for error in form.grado_estudio.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Especialidad * </label>
+            </div>
+
+            <div class="col-sm-8">
+                {% render_field form.rama_carrera %}
+                <div class="{% if form.rama_carrera.errors %} invalid{% endif %}">
+                {% for error in form.rama_carrera.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+                  <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Idiomas</label>
+            </div>
+
+            <div class="col-sm-8">
+                {% render_field form.idioma %}
+                <div class="{% if form.idioma.errors %} invalid{% endif %}">
+                {% for error in form.idioma.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+                  <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Conocimientos</label>
+            </div>
+
+            <div class="col-sm-8">
+                {% render_field form.conocimiento %}
+                <div class="{% if form.conocimiento.errors %} invalid{% endif %}">
+                {% for error in form.conocimiento.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-user-tie icono"></i>Beneficios</h5>
+        </div>
+    <div class="card-body">
+          <div class="form-group">
+            <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label">Beneficios</label>
+            </div>
+            <div class="col-sm-8">
+            <div class="form-check">
+                {% for beneficio in form.beneficio %}
+                    {% render_field beneficio %}
+                {% endfor %}
+            </div>
+            <small class="form-text text-muted">Puede seleccionar múltiples valores</small>
+                <div class="{% if form.beneficio.errors %} invalid{% endif %}">
+                {% for error in form.beneficio.errors  %}
+                <small style="color: red" class="help-block">{{ error }}</small>
+                {% endfor %}
+                </div>
+            </div>
+
+            </div>
+          </div>
+ </div>
+    </div>
+</div>
+    <div class="modal-footer">
+      <button type="button" class="submit-btn btn btn-info waves-effect" id="btn-enviar">Actualizar</button>
+      <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+    </div>
+</form>
+</div>
+{% block extrajs %}
+    <script src="{% static 'js/switchery.min.js' %}"></script>
+    <script src="{% static 'js/select2.full.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-select.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-tagsinput.min.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap-touchspin.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/dff.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.multi-select.js' %}"></script>
+            <script src="{% static 'js/DjangoAjax.js'%}"></script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+    <script>
+
+        if ($("#id_remuneracion_0").is(":checked")){
+            $("input[name=remuneracion_max]").hide();
+        }
+        {
+            $("input[name=remuneracion]").change(function () {
+			var valor = ($(this).val());
+            if(valor === "1"){
+                $("input[name=remuneracion_max]").hide();
+            }else {
+                $("input[name=remuneracion_max]").show();
+            }
+			});
+        }
+
+
+    </script>
+            <script>
+    $(function() {
+        // Switchery
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $('.js-switch').each(function() {
+            new Switchery($(this)[0], $(this).data());
+        });
+        // For select 2
+        $(".select2").select2();
+        $('.selectpicker').selectpicker();
+        //Bootstrap-TouchSpin
+        $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+        });
+        var vspinTrue = $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+        });
+        if (vspinTrue) {
+            $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+        }
+        $("input[name='tch1']").TouchSpin({
+            min: 0,
+            max: 100,
+            step: 0.1,
+            decimals: 2,
+            boostat: 5,
+            maxboostedstep: 10,
+            postfix: '%'
+        });
+        $("input[name='tch2']").TouchSpin({
+            min: -1000000000,
+            max: 1000000000,
+            stepinterval: 50,
+            maxboostedstep: 10000000,
+            prefix: '$'
+        });
+        $("input[name='tch3']").TouchSpin();
+        $("input[name='tch3_22']").TouchSpin({
+            initval: 40
+        });
+        $("input[name='tch5']").TouchSpin({
+            prefix: "pre",
+            postfix: "post"
+        });
+        // For multiselect
+        $('#pre-selected-options').multiSelect();
+        $('#optgroup').multiSelect({
+            selectableOptgroup: true
+        });
+        $('#public-methods').multiSelect();
+        $('#select-all').click(function() {
+            $('#public-methods').multiSelect('select_all');
+            return false;
+        });
+        $('#deselect-all').click(function() {
+            $('#public-methods').multiSelect('deselect_all');
+            return false;
+        });
+        $('#refresh').on('click', function() {
+            $('#public-methods').multiSelect('refresh');
+            return false;
+        });
+        $('#add-option').on('click', function() {
+            $('#public-methods').multiSelect('addOption', {
+                value: 42,
+                text: 'test 42',
+                index: 0
+            });
+            return false;
+        });
+        $(".ajax").select2({
+            ajax: {
+                url: "https://api.github.com/search/repositories",
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function(data, params) {
+                    // parse the results into the format expected by Select2
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data, except to indicate that infinite
+                    // scrolling can be used
+                    params.page = params.page || 1;
+                    return {
+                        results: data.items,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+            escapeMarkup: function(markup) {
+                return markup;
+            }, // let our custom formatter work
+            minimumInputLength: 1,
+            //templateResult: formatRepo, // omitted for brevity, see the source of this page
+            //templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+        });
+    });
+    </script>
+{% endblock extrajs %}
