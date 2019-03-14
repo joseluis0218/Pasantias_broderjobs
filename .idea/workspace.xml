@@ -5,52 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc3bb639-f798-41fe-9522-2c5728dd8775" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/editar-oportunidad.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/main/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/main/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/AvisoNuevaOportunidad.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/AvisoRegistroEmpresa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/CuentaActiva.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/CuentaCreada.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroEmpresa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroInstituto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/correos/OlvidoContrasena.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena-hecho.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/contrasena-olvidada.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/contrasena-restablecer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/instituto-registrar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instituto/templates/main/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0002_auto_20190213_1747.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0003_puesto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0004_empresadivision.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0005_remove_empresa_logo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/0006_empresa_logo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/empresas/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/empresas/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instituto/empresas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/empresas/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0002_remove_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0003_estudiante_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0004_auto_20190219_1907.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0005_remove_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0006_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0007_remove_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/0008_auto_20190221_1342.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/estudiante/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/estudiante/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/estudiante/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/usuario/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/usuario/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/migrations/0002_remove_persona_fecha_activacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/migrations/0003_auto_20190214_0230.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/main/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/main/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/main/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0002_postulacion_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0003_remove_postulacion_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0004_postulacion_estudiante_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0005_auto_20190219_1913.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0006_remove_postulacion_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0007_postulacion_calificacion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0008_auto_20190220_1932.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/migrations/0009_auto_20190220_2138.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/oportunidades/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/oportunidades/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/templates/estudiante/buscar-cvs.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/estudiante/buscar-cvs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/templates/oportunidad/estudiante-cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/estudiante-cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/empresa/empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/empresa/empresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/layouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/layouts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instituto/templates/usuario/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/instituto/templates/usuario/usuarios.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,61 +65,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/editar-oportunidad.html">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/main/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7659">
-              <caret line="310" column="49" selection-start-line="310" selection-start-column="49" selection-end-line="310" selection-end-column="49" />
-              <folding>
-                <element signature="e#1545#1563#0#HTML" expanded="true" />
-                <element signature="e#2151#2169#0#HTML" expanded="true" />
-                <element signature="e#2828#2846#0#HTML" expanded="true" />
-                <element signature="e#3236#3254#0#HTML" expanded="true" />
-                <element signature="e#4003#4021#0#HTML" expanded="true" />
-                <element signature="e#4611#4629#0#HTML" expanded="true" />
-                <element signature="e#5013#5031#0#HTML" expanded="true" />
-                <element signature="e#5779#5797#0#HTML" expanded="true" />
-                <element signature="e#5197#5215#0#HTML" expanded="true" />
-                <element signature="e#7250#7268#0#HTML" expanded="true" />
-                <element signature="e#8153#8171#0#HTML" expanded="true" />
-                <element signature="e#8896#8914#0#HTML" expanded="true" />
-                <element signature="e#9298#9316#0#HTML" expanded="true" />
-                <element signature="e#10277#10295#0#HTML" expanded="true" />
-                <element signature="e#11104#11122#0#HTML" expanded="true" />
-                <element signature="e#11704#11722#0#HTML" expanded="true" />
-                <element signature="e#12293#12311#0#HTML" expanded="true" />
-                <element signature="e#12906#12924#0#HTML" expanded="true" />
-                <element signature="e#12684#12702#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="2053">
+              <caret line="96" column="81" selection-start-line="96" selection-start-column="81" selection-end-line="96" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7150">
-              <caret line="275" selection-start-line="275" selection-end-line="276" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-              <folding>
-                <element signature="n#style#0;n#small#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/usuarios.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="104">
+              <caret line="10" column="176" selection-start-line="10" selection-start-column="176" selection-end-line="10" selection-end-column="200" />
             </state>
           </provider>
         </entry>
@@ -140,57 +85,76 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="-3625">
               <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4489">
+              <caret line="275" selection-start-line="275" selection-end-line="276" selection-end-column="81" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/usuarios.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-end-line="6" />
+            <state relative-caret-position="167">
+              <caret line="104" column="71" lean-forward="true" selection-start-line="104" selection-start-column="71" selection-end-line="104" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py">
+        <entry file="file://$PROJECT_DIR$/instituto/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="156" column="61" selection-start-line="156" selection-start-column="61" selection-end-line="156" selection-end-column="61" />
+            <state relative-caret-position="151">
+              <caret line="159" column="74" selection-start-line="159" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#84#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/forms.py">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/correos/OlvidoContrasena.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="28" column="100" lean-forward="true" selection-start-line="28" selection-start-column="100" selection-end-line="28" selection-end-column="100" />
-              <folding>
-                <element signature="e#15#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="389">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instituto/oportunidades/models.py">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/main/contrasena-olvidada.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="80" column="95" lean-forward="true" selection-start-line="80" selection-start-column="95" selection-end-line="80" selection-end-column="95" />
+            <state relative-caret-position="52">
+              <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="8" selection-start-line="8" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instituto/main/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,8 +166,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -237,6 +201,7 @@
       <find>Tipod</find>
       <find>Grad</find>
       <find>Especia</find>
+      <find>AuthenticationForm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -245,46 +210,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/models.py" />
-        <option value="$PROJECT_DIR$/instituto/instituto/utils.py" />
-        <option value="$PROJECT_DIR$/instituto/oportunidad/models.py" />
-        <option value="$PROJECT_DIR$/instituto/oportunidades/views.py" />
-        <option value="$PROJECT_DIR$/instituto/oportunidades/admin.py" />
-        <option value="$PROJECT_DIR$/instituto/estudiante/admin.py" />
-        <option value="$PROJECT_DIR$/instituto/empresas/admin.py" />
-        <option value="$PROJECT_DIR$/instituto/main/admin.py" />
-        <option value="$PROJECT_DIR$/instituto/static/js/input-filter.js" />
-        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.py" />
-        <option value="$PROJECT_DIR$/instituto/templates/usuario/ver-usuario.html" />
-        <option value="$PROJECT_DIR$/instituto/static/js/datatables.min.js" />
-        <option value="$PROJECT_DIR$/instituto/static/css/switch.css" />
-        <option value="$PROJECT_DIR$/instituto/static/css/custom-switch.css" />
-        <option value="$PROJECT_DIR$/instituto/static/css/radio-button.css" />
-        <option value="$PROJECT_DIR$/instituto/static/css/custom-radio.css" />
-        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" />
-        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" />
-        <option value="$PROJECT_DIR$/instituto/templates/layouts/layout_listaoportunidades.html" />
-        <option value="$PROJECT_DIR$/instituto/templates/layouts/oportunidades.html" />
-        <option value="$PROJECT_DIR$/instituto/templates/layouts/example.html" />
-        <option value="$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html" />
-        <option value="$PROJECT_DIR$/instituto/static/css/oportunidades.css" />
-        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/activar-oportunidad.html" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/abrir-oportunidad.html" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/archivar-oportunidad.html" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/cerrar-oportunidad.html" />
-        <option value="$PROJECT_DIR$/instituto/templates/usuario/usuarios.html" />
         <option value="$PROJECT_DIR$/instituto/static/js/cambio-estado.js" />
-        <option value="$PROJECT_DIR$/instituto/instituto/settings.py" />
         <option value="$PROJECT_DIR$/instituto/instituto_apps/estudiantes/urls.py" />
-        <option value="$PROJECT_DIR$/instituto/instituto/urls.py" />
-        <option value="$PROJECT_DIR$/instituto/templates/layouts/base.html" />
-        <option value="$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py" />
         <option value="$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/forms/models.py" />
         <option value="$PROJECT_DIR$/instituto/templates/estudiante/buscar-cvs.html" />
         <option value="$PROJECT_DIR$/instituto/main/utils.py" />
         <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py" />
         <option value="$PROJECT_DIR$/instituto/main/models.py" />
-        <option value="$PROJECT_DIR$/instituto/empresas/models.py" />
         <option value="$PROJECT_DIR$/instituto/estudiante/models.py" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/estudiante-cv.html" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html" />
@@ -294,13 +229,42 @@
         <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/forms.py" />
         <option value="$PROJECT_DIR$/instituto/oportunidades/models.py" />
         <option value="$PROJECT_DIR$/instituto/templates/oportunidad/editar-oportunidad.html" />
-        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/contraseña-restablecer.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/logout.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto/settings.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/correos/CuentaActiva.html" />
+        <option value="$PROJECT_DIR$/instituto/empresas/models.py" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/usuario/usuarios.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/empresa/empresas.html" />
+        <option value="$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/correos/CuentaCreada.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena-hecho.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/layouts/base.html" />
         <option value="$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/instituto-registrar.html" />
+        <option value="$PROJECT_DIR$/instituto/main/forms.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroEstudiante.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroInstituto.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/contrasena-restablecer.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/login.html" />
+        <option value="$PROJECT_DIR$/instituto/templates/main/contrasena-olvidada.html" />
+        <option value="$PROJECT_DIR$/instituto/main/urls.py" />
+        <option value="$PROJECT_DIR$/instituto/templates/correos/OlvidoContrasena.html" />
+        <option value="$PROJECT_DIR$/instituto/main/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
     <option name="y" value="27" />
     <option name="width" value="960" />
     <option name="height" value="1053" />
@@ -366,6 +330,13 @@
               <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
               <item name="instituto" type="462c0819:PsiDirectoryNode" />
               <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="empresa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto_apps" type="462c0819:PsiDirectoryNode" />
               <item name="estudiantes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,8 +363,7 @@
               <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
               <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
               <item name="instituto" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
@@ -418,7 +388,14 @@
               <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
               <item name="instituto" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="estudiante" type="462c0819:PsiDirectoryNode" />
+              <item name="correos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="empresa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
@@ -426,6 +403,13 @@
               <item name="instituto" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
@@ -441,6 +425,12 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="usuario" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="broderjobs_instituto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broderjobs_instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="instituto" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -451,17 +441,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../broderjobs_system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../broderjobs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/instituto/templates/correos" />
+      <recent name="$PROJECT_DIR$/instituto/instituto" />
       <recent name="$PROJECT_DIR$/instituto/oportunidades/migrations" />
       <recent name="$PROJECT_DIR$/instituto/oportunidades" />
       <recent name="$PROJECT_DIR$/instituto/static/js" />
-      <recent name="$PROJECT_DIR$/instituto/static/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/instituto/instituto_apps" />
@@ -513,11 +504,18 @@
       <workItem from="1551317004118" duration="60000" />
       <workItem from="1551318591321" duration="2645000" />
       <workItem from="1551409897420" duration="60102000" />
+      <workItem from="1551885488658" duration="3332000" />
+      <workItem from="1551927555261" duration="11393000" />
+      <workItem from="1551982004263" duration="9318000" />
+      <workItem from="1552016157667" duration="20383000" />
+      <workItem from="1552249791052" duration="31145000" />
+      <workItem from="1552405806870" duration="1604000" />
+      <workItem from="1552541247242" duration="11483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="510244000" />
+    <option name="totallyTimeSpent" value="598902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,8 +528,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16239317" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16079059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -544,8 +543,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016026" side_tool="true" weight="0.32967034" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49839744" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502193" side_tool="true" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49780703" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -556,7 +555,7 @@
       <window_info anchor="right" id="Database" order="6" weight="0.32968128" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17628205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17094018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -585,175 +584,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/instituto/empresas/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py">
+    <entry file="file://$PROJECT_DIR$/instituto/estudiante/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="4" selection-start-line="4" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/media/img/2019/02/22/tecsup-1_Pgynyql.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/empresas/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/js/bootstrap-tagsinput.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/css/bootstrap-tagsinput.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/css/oportunidades.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="265" selection-start-line="265" selection-end-line="266" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/estudiante/buscar-cvs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4927">
-          <caret line="191" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="191" />
-          <folding>
-            <element signature="e#946#968#0#HTML" expanded="true" />
-            <element signature="e#7130#7149#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/urls/resolvers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="404" column="53" lean-forward="true" selection-start-line="404" selection-start-column="53" selection-end-line="404" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/estudiante/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="142" selection-start-line="142" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/empresas/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="442">
+          <caret line="17" column="93" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="93" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -763,196 +597,367 @@
     <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/estudiante-cv.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
-          <caret line="210" column="65" selection-start-line="210" selection-start-column="65" selection-end-line="210" selection-end-column="65" />
+          <caret line="201" column="27" lean-forward="true" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/cerrar-oportunidad.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/editar-oportunidad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="46" column="35" selection-start-line="46" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/estudiante/buscar-cvs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2211" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="31" lean-forward="true" selection-end-line="28" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/archivar-oportunidad.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/logout.html" />
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/AvisoRegistroEmpresa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instituto/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="49" />
+        <state relative-caret-position="286">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="17" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/estudiante/models.py">
+    <entry file="file://$PROJECT_DIR$/instituto/static/js/cambio-estado.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="17" column="93" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="93" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6832" column="21" lean-forward="true" selection-start-line="6832" selection-start-column="21" selection-end-line="6832" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/widget_tweaks/templatetags/widget_tweaks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="207" lean-forward="true" selection-start-line="4" selection-start-column="207" selection-end-line="4" selection-end-column="207" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/js/jquery.easypiechart.js">
+    <entry file="file://$PROJECT_DIR$/instituto/empresas/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/main/utils.py">
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/estudiantes/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+        <state relative-caret-position="286">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#15#50#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="157" column="40" lean-forward="true" selection-start-line="157" selection-start-column="40" selection-end-line="157" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/empresas/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/empresa/empresas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="e#570#577#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/oportunidades_layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="94" selection-start-line="4" selection-start-column="94" selection-end-line="4" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/empresa/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="25" column="70" lean-forward="true" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/urls/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena-hecho.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+          <folding>
+            <element signature="e#330#353#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="119" column="94" selection-start-line="119" selection-start-column="94" selection-end-line="119" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#li#0;n#ul#1;n#div#1;n#nav#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/contrib/auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroEmpresa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/CuentaActiva.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myvenv/lib/python3.6/site-packages/django/contrib/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3588">
+          <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/instituto-registrar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/cambiar-contrasena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="39" selection-start-line="39" selection-end-line="41" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#1#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="63" />
+        <state relative-caret-position="26">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html">
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/CuentaRegistroInstituto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+        <state relative-caret-position="416">
+          <caret line="37" column="62" lean-forward="true" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/layouts/base.html">
+    <entry file="file://$PROJECT_DIR$/instituto/users/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="202" column="58" lean-forward="true" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/static/js/cambio-estado.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1066">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="-650">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
           <folding>
-            <element signature="n#style#0;n#small#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#42#109#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="28" column="100" lean-forward="true" selection-start-line="28" selection-start-column="100" selection-end-line="28" selection-end-column="100" />
-          <folding>
-            <element signature="e#15#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/oportunidades/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="80" column="95" lean-forward="true" selection-start-line="80" selection-start-column="95" selection-end-line="80" selection-end-column="95" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7150">
-          <caret line="275" selection-start-line="275" selection-end-line="276" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/editar-oportunidad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7659">
-          <caret line="310" column="49" selection-start-line="310" selection-start-column="49" selection-end-line="310" selection-end-column="49" />
-          <folding>
-            <element signature="e#1545#1563#0#HTML" expanded="true" />
-            <element signature="e#2151#2169#0#HTML" expanded="true" />
-            <element signature="e#2828#2846#0#HTML" expanded="true" />
-            <element signature="e#3236#3254#0#HTML" expanded="true" />
-            <element signature="e#4003#4021#0#HTML" expanded="true" />
-            <element signature="e#4611#4629#0#HTML" expanded="true" />
-            <element signature="e#5013#5031#0#HTML" expanded="true" />
-            <element signature="e#5779#5797#0#HTML" expanded="true" />
-            <element signature="e#5197#5215#0#HTML" expanded="true" />
-            <element signature="e#7250#7268#0#HTML" expanded="true" />
-            <element signature="e#8153#8171#0#HTML" expanded="true" />
-            <element signature="e#8896#8914#0#HTML" expanded="true" />
-            <element signature="e#9298#9316#0#HTML" expanded="true" />
-            <element signature="e#10277#10295#0#HTML" expanded="true" />
-            <element signature="e#11104#11122#0#HTML" expanded="true" />
-            <element signature="e#11704#11722#0#HTML" expanded="true" />
-            <element signature="e#12293#12311#0#HTML" expanded="true" />
-            <element signature="e#12906#12924#0#HTML" expanded="true" />
-            <element signature="e#12684#12702#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/usuarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/usuario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-end-line="6" />
+        <state relative-caret-position="312">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/editar-usuario.html">
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/contrasena-restablecer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-676">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/CuentaCreada.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/ver-usuario.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/instituto/instituto_apps/oportunidad/views.py">
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/vista-previa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="156" column="61" selection-start-line="156" selection-start-column="61" selection-end-line="156" selection-end-column="61" />
+        <state relative-caret-position="104">
+          <caret line="10" column="176" selection-start-line="10" selection-start-column="176" selection-end-line="10" selection-end-column="200" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/ver-oportunidad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4489">
+          <caret line="275" selection-start-line="275" selection-end-line="276" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/crear-usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="8" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/usuario/usuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="104" column="71" lean-forward="true" selection-start-line="104" selection-start-column="71" selection-end-line="104" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/contrasena-olvidada.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/main/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2053">
+          <caret line="96" column="81" selection-start-line="96" selection-start-column="81" selection-end-line="96" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/oportunidad/oportunidades.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3625">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/templates/correos/OlvidoContrasena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instituto/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="159" column="74" selection-start-line="159" selection-start-column="74" selection-end-line="159" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,6 +8,9 @@ from datetime import date, datetime,timedelta,time
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='login')
 def ListarOportunidades(request):
 
 
@@ -44,9 +47,8 @@ def ListarOportunidades(request):
         postulantes_r = Postulacion.objects.filter(oportunidad__id=oport_archivada.id, calificacion='R').count()
         postulantes_sc = Postulacion.objects.filter(oportunidad__id=oport_archivada.id, calificacion='SC').count()
         lista_archivadas.append([oport_archivada, [postulantes_sv,postulantes_mb,postulantes_b,postulantes_r,postulantes_sc]])
-
     return render(request,'oportunidad/oportunidades.html',{'cantidad_abiertas':cantidad_abiertas,'estados':estado_oportunidad,'cantidad_cerradas':cantidad_cerradas,'cantidad_archivadas':cantidad_archivadas, 'oport_abiertas': lista_abiertas, 'oport_cerradas': lista_cerradas, 'oport_archivadas': lista_archivadas})
-
+@login_required(login_url='login')
 def VerOportunidad(request,slug):
     if request.method == 'GET':
          oportunidad = Oportunidad.objects.get(slug=slug)
@@ -64,12 +66,14 @@ def VerOportunidad(request,slug):
 
     return render(request,'oportunidad/ver-oportunidad.html',{'oportunidad':oportunidad,'postulantes':lista_compatibilidades})
 
+@login_required(login_url='login')
 def VistaPrevia(request,id):
     if request.method == 'GET':
         oportunidad = Oportunidad.objects.get(id=id)
 
     return render(request, 'oportunidad/vista-previa.html',{'oportunidad':oportunidad})
 
+@login_required(login_url='login')
 def CalificarPostulante(request,id,valor):
 
     if request.method == 'POST':
@@ -92,6 +96,8 @@ def CalificarPostulante(request,id,valor):
             print(postulante.calificacion)
 
     return redirect('oportunidad:index')
+
+@login_required(login_url='login')
 def VerCv(request,id):
     if request.method == 'GET':
         estudiante = Estudiante.objects.get(id = id)
@@ -111,6 +117,7 @@ def VerCv(request,id):
             resumen = None
     return render(request,'oportunidad/estudiante-cv.html',{'estudiante':estudiante,'resumen':resumen,'edad':edad,'experiencias_profesionales':experiencias_profesionales,'actividades_extras':actividades_extras})
 
+@login_required(login_url='login')
 def AbrirOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
 
@@ -122,6 +129,7 @@ def AbrirOportunidad(request,id):
         return redirect('oportunidad:index')
     return render(request,'oportunidad/abrir-oportunidad.html',{'oportunidad':oportunidad})
 
+@login_required(login_url='login')
 def CerrarOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
     if request.method == 'POST':
@@ -132,6 +140,7 @@ def CerrarOportunidad(request,id):
         return redirect('oportunidad:index')
     return render(request,'oportunidad/cerrar-oportunidad.html',{'oportunidad':oportunidad})
 
+@login_required(login_url='login')
 def ArchivarOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
     postulaciones = Postulacion.objects.filter(oportunidad__id = oportunidad.id)
@@ -144,7 +153,7 @@ def ArchivarOportunidad(request,id):
         return redirect('oportunidad:index')
     return render(request,'oportunidad/archivar-oportunidad.html',{'oportunidad':oportunidad})
 
-
+@login_required(login_url='login')
 def EditarOportunidad(request, id):
     form = None
     oportunidad = Oportunidad.objects.get(id=id)

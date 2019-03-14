@@ -18,8 +18,11 @@ from django.urls import path,include
 from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('main.urls')),
     path('empresa/', include(('instituto_apps.empresa.urls', 'empresa'))),
     path('oportunidad/', include(('instituto_apps.oportunidad.urls', 'oportunidad'))),
     path('estudiante/', include(('instituto_apps.estudiantes.urls', 'estudiante'))),

@@ -102,27 +102,33 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{% static 'img/user.png'%}" alt="user" class="profile-pic" /></a>
+                                    src="{% static 'img/businessman.png'%}" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
+                                {% if user.is_authenticated %}
                                 <ul class="dropdown-user">
                                     <li>
-                                        <div class="dw-user-box">
-                                            <div class="u-img"><img src="{% static 'img/user.png'%}" alt="user"></div>
-                                            <div class="u-text">
-                                                <h4>Steave Jobs</h4>
-                                                <p class="text-muted">varun@gmail.com</p>
-                                            </div>
+{#                                        <div class="dw-user-box"  style="width: 100%" >#}
+{#                                            <div class="u-img"><img src="{% static 'img/businessman.png'%}" alt="user"></div>#}
+{#                                            <div class="u-text">#}
+{#                                                <h3>{{ user.first_name }}</h3>#}
+{#                                                <small>{{ user.email }}</small>#}
+{#                                            </div>#}
+{#                                        </div>#}
+                                        <div class="media" style="border-style: none;">
+                                            <div class="u-img align-self-center mr-2 rounded-circle"><img src="{% static 'img/businessman.png'%}" alt="user" width="80" height="80"></div>
+                                            <div class="media-body">
+                                                <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+
+                                          </div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="editar-perfil.html"><i class="fas fa-user-edit"></i> Editar Perfil</a>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="cambiar-contraseña.html"><i class="fab fa-expeditedssl"></i> Cambiar
+                                    <li><a href="{% url 'cambiar_contrasena' %} "><i class="fab fa-expeditedssl"></i> Cambiar
                                             contraseña</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+                                    <li><a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Salir</a></li>
                                 </ul>
+                                {% endif %}
                             </div>
                         </li>
                     </ul>

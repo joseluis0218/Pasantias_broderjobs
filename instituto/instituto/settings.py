@@ -145,3 +145,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+DEFAULT_FROM_EMAIL = 'broderjobs@gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'jose.cristobal@tecsup.edu.pe'
+EMAIL_HOST_PASSWORD = 'erquinio0218'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'oportunidad:index'

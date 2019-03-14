@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   <head>
+        <title>Registro de empresa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @font-face {
+                font-family: 'Roboto Light';
+                src: url({{ protocol }}://{{ domain }}{% static 'archivos/fonts/Roboto-Light.eot' %});
+                src: url({{ protocol }}://{{ domain }}{% static 'archivos/fonts/Roboto-Light.eot?#iefix' %}) format('embedded-opentype'),
+                     url({{ protocol }}://{{ domain }}{% static 'archivos/fonts/Roboto-Light.woff'%}) format('woff'),
+                     url({{ protocol }}://{{ domain }}{% static 'archivos/fonts/Roboto-Light.ttf'%}) format('truetype'),
+                     url({{ protocol }}://{{ domain }}{% static 'archivos/fonts/Roboto-Light.svg#Roboto-Light'%}) format('svg');
+            }
+        </style>
+    </head>
+    <body style = "font-family: Helvetica; background-color:#F2F2F2;">
+        <div style ="text-align: center; margin: 50px;">
+            <img src ="{%static 'archivos/logo.png' %}"/>
+        </div>
+        <div style ="background-color:white; margin: 15px; padding: 45px" >
+                    <div style ="font-family: Helvetica; font-size: 16pt; color: #0037EF;  text-align: center ">
+               Registro Empresa </div>
+            <div style ="font-family: Helvetica;  color:#606060; font-size: 14pt; text-align: center; margin-top: 40px">
+               Gracias por registrarte en la bolsa de trabajo de <b>{{nombre,instituto}}</b>, dentro de poco nos estaremos comunicando para validar tu información. Cuando tu cuenta este activa ingresa con: <b> {{ user.email }} </b> y la contraseña que generaste previamente. </div>
+            
+        </div>
+    </body>
+</html>

@@ -10,7 +10,7 @@
 {% block contenido%}
     <div id="results">
     {% for message in messages %}
-    <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissable" {% endif %}>
+    <div {%  if message.tags != 'error'%} class="alert alert-{{ message.tags }} alert-dismissable"  {% else %}class="alert alert-danger alert-dismissable"{% endif %}>
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4>{{ message }}</h4>
     </div>
@@ -18,6 +18,11 @@
 </div>
 <div class="container">
 <div class="row">
+{#{% if user.is_authenticated %}#}
+{#    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>#}
+{#{% else %}#}
+{#    <p>Welcome, new user. Please log in.</p>#}
+{#{% endif %}#}
     <!-- Column -->
     <div class="col-lg-4 col-md-6">
         <div class="cntr">

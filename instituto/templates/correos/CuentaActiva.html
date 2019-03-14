@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reestablece tu contraseña en Broderjobs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+        </style>
+    </head>
+    <body style = "font-family: Helvetica; background-color:#F2F2F2;">
+        <div style ="text-align: center; margin: 50px;">
+            <img src ="cetemin.png" style="width: 10%;"/>
+        </div>
+        <div style ="background-color:white; margin: 15px; padding: 45px" >
+            <div style ="font-family: Helvetica; font-size: 16pt; color: #0037EF;  text-align: center ">
+                Cuenta Activa
+            </div>
+            <p style ="font-family: Helvetica;  color:#606060; font-size: 14pt; text-align: justify; margin-top: 40px"  >Su Cuenta ha sido activada para la bolsa de trabajo de<b>CETEMIN</b> para poder ingresar utilice las siguientes credenciales</p>
+            <p>Email: {{email}}</p>
+            <p>Contraseña: Contraseña generada en el registro.</p>
+            <p style ="font-family: Helvetica;  color:#606060; font-size: 14pt;  margin-top: 40px" align="center">Para poder ingresar a la plataforma haga click al siguiente enlace:</p>
+            <div style="text-align: center; display: block">
+                <a href="{{ protocol }}://{{ domain }}/login" style = "display: inline-block;background-color: #2d64af; padding: 20px; border-radius: 6px; font-size: 14pt; color: white; width: 200px; text-decoration: none">INICIAR SESIÓN</a>
+            </div>
+        </div>
+    </body>
+</html>

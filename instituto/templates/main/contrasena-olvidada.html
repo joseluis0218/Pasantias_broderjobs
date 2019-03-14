@@ -1,0 +1,31 @@
+{% load widget_tweaks %}
+<div class="modal-header">
+  <h4 class="modal-title" id="myModalLabel">Recuperar contraseña</h4>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+</div>
+<div class="modal-body">
+  <form method="POST" action="">
+        {% csrf_token %}
+  <div class="form-group">
+
+      <div class="col-md-12 text-center">
+          <p class="text-muted text-left">	¡No te preocupes! A cualquiera le pasa. Nosotros te ayudamos a recuperarla. <br>
+										 Escribe tu correo:
+          </p>
+
+      <label for="{{ reset_form.email.id_for_label }}">{{ reset_form.email.label }}</label>
+        {% render_field reset_form.email %}
+        <div class="{% if reset_form.email.errors %} invalid{% endif %}">
+          {% for error in reset_form.email.errors %}
+          <small style="color: red" class="help-block">{{ error }}</small>
+          {% endfor %}
+									</div>
+								</div>
+        </div>
+    <div class="modal-footer">
+      <button type="button" class="submit-btn btn btn-info waves-effect" id="btn-enviar">Enviar Correo </button>
+      <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+    </div>
+
+  </form>
+</div>

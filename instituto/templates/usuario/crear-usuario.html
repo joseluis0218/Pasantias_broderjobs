@@ -19,17 +19,6 @@
         </div>
       </div>
       {% endfor %}
-      {% for field in persona_form %}
-      <div class="col-md-12 m-b-18">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {% render_field field class="form-control"%}
-        <div class="{% if field.errors %} invalid{% endif %}">
-          {% for error in field.errors %}
-          <small style="color: red" class="help-block">{{ error }}</small>
-          {% endfor %}
-        </div>
-      </div>
-      {% endfor %}
     </div>
 
     <div class="modal-footer">

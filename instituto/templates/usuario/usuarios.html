@@ -45,7 +45,6 @@
                             <tr>
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
-                                <th>Usuario</th>
                                 <th>Correo</th>
                                 <th>Accion</th>
                             </tr>
@@ -56,7 +55,6 @@
                             <tr>
                                 <td>{{ persona.usuario.first_name }}</td>
                                 <td>{{ persona.usuario.last_name }}</td>
-                                <td>{{ persona.usuario.username }}</td>
                                 <td>{{persona.usuario.email}}</td>
                                 <td>
                                     <img src="{% static 'img/edit.svg'%}" alt="Editar"

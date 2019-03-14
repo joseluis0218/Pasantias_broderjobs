@@ -1,0 +1,69 @@
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar</title>
+
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <link href="{% static 'css/blue.css'%}" id="theme" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="row" style="margin-top: 8%">
+
+    <div class="container">
+    <div id="results">
+    {% for message in messages %}
+    <div {%  if message.tags != 'error'%} class="alert alert-{{ message.tags }} alert-dismissable"  {% else %}class="alert alert-danger alert-dismissable"{% endif %}>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>{{ message }}</h4>
+    </div>
+    {% endfor %}
+</div>
+                <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-business-time icono"></i>Registrar</h5>
+        </div>
+
+                <div class="card card-body">
+
+    <form action="{% url 'registrar' %}" method="POST">
+        {% csrf_token %}
+
+        <div class = "form-group">
+
+      {% for field in usuario_form %}
+      <div class="col-md-12 m-b-18">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% render_field field class="form-control" %}
+        <div class="{% if field.errors %} invalid{% endif %}">
+          {% for error in field.errors %}
+          <small style="color: red" class="help-block">{{ error }}</small>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+        </div>
+        <div class="modal-footer" style="border-style: none;">
+            <input type="submit" class="btn btn-info" value="Registrar"/>
+            <a href="{% url 'login' %}" class="btn btn-default">Iniciar Sesión</a>
+        </div>
+    </form>
+                </div>
+
+                </div>
+    </div>
+</div>
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+</body>
+</html>

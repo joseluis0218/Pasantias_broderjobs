@@ -118,7 +118,7 @@ class Representante(models.Model):
     estado =  models.CharField(choices=items_registro, max_length=1, default='A', null=True, blank=True)
 
     def __str__(self):
-        return self.usuario_creacion
+        return self.persona.usuario.first_name
 
 class EmpresaDivision(models.Model):
     empresa = models.ForeignKey(Empresa,on_delete=models.CASCADE)

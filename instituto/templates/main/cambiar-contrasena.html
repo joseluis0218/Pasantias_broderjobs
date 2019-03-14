@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+{% load widget_tweaks %}
+
+{% block titulo %}
+    Cambiar contraseña
+{% endblock titulo %}
+{% block class %}container{% endblock class %}
+{% block contenido %}
+
+    <div class="row">
+
+        <div class="col-lg-12">
+                                <div class="card card-outline-info" style="margin-top: 3%;">
+                                    <div class="card-header">
+                                        <h4 class="m-b-0 text-white">Cambiar contraseña</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                                <div class = "form-group">
+                                                    <label for="{{ form.old_password.id_for_label }}">{{ form.old_password.label }}</label>
+
+                                                    {% render_field form.old_password class="form-control" %}
+                                                    <small style="color: red" class="help-block">{{ form.old_password.errors }}</small>
+
+                                                </div>
+                                                <div class = "form-group">
+                                                    <label for="{{ form.new_password1.id_for_label }}">{{ form.new_password1.label }}</label>
+
+                                                    {% render_field form.new_password1 class="form-control" %}
+                                                    <small style="color: red" class="help-block">{{ form.new_password1.errors }}</small>
+
+                                                </div>
+                                                <div class = "form-group">
+                                                    <label for="{{ form.new_password2.id_for_label }}">{{ form.new_password2.label }}</label>
+                                                     {% render_field form.new_password2 class="form-control" %}
+                                                    <small style="color: red" class="help-block">{{ form.new_password2.errors }}</small>
+
+                                                </div>
+                                                <div class="modal-footer" style="border-style: none;">
+                                                  <button type="submit" class="btn btn-info waves-effect" id="btn-enviar">Cambiar mi contraseña</button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+        </div>
+    </div>
+
+{% endblock contenido %}

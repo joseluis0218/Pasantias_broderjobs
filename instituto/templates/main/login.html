@@ -1,0 +1,99 @@
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <link href="{% static 'css/blue.css'%}" id="theme" rel="stylesheet">
+
+</head>
+<body>
+                <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                        </div>
+                    </div>
+                </div>
+
+<div class="row" style="margin-top: 8%">
+
+    <div class="container">
+    <div id="results">
+    {% for message in messages %}
+    <div {%  if message.tags != 'error'%} class="alert alert-{{ message.tags }} alert-dismissable"  {% else %}class="alert alert-danger alert-dismissable"{% endif %}>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>{{ message }}</h4>
+    </div>
+    {% endfor %}
+</div>
+                <div class="card-outline-info">
+        <div class="card-header">
+            <h5 class="m-b-0 text-white titulo"><i class="fas fa-business-time icono"></i>Login</h5>
+        </div>
+
+                <div class="card card-body">
+
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+
+        <div class = "form-group">
+            <label for="">Email</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+        </div>
+        {% render_field form.username class="form-control" %}
+            <small style="color: red" class="help-block">{{ form.username.errors }}</small>
+      </div>
+
+
+        </div>
+        <div class = "form-group">
+            <label for="id_new_password2">Contraseña</label>
+                  <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-key"></i></div>
+        </div>
+       {% render_field form.password class="form-control" %}
+            <small style="color: red" class="help-block">{{ form.password.errors }}</small>
+      </div>
+
+
+
+        </div>
+        <div class="modal-footer" style="border-style: none;">
+            <input type="submit" class="btn btn-info" value="Iniciar Sesión"/>
+            <a href="{% url 'registrar' %}" class="btn btn-default">Regístrate</a>
+        </div>
+       <a class="olvidar-contrasena" href="#">¿Olvidaste tu contraseña?</a>
+
+
+
+    </form>
+                </div>
+
+                </div>
+    </div>
+</div>
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+        <script>
+            $(document).ready(function () {
+
+                $(".olvidar-contrasena").modalForm({
+                    formURL: "{% url 'olvidar_contrasena' %}"
+                });
+            });
+        </script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+</body>
+</html>

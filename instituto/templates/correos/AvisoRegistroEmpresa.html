@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body  style = "font-family: Helvetica; background-color:#F2F2F2;">
+	<div style ="text-align: center; margin: 50px;">
+            <img src ="{%static 'archivos/logo.png' %}"/>
+        </div>
+        <div style ="background-color:white; margin: 15px; padding: 45px">
+<h3 style ="font-family: Helvetica; font-size: 16pt; color: #0037EF;  text-align: center ">Registro de nueva Empresa</h3>
+<p>Empresa: {{representante.empresa}}</p>
+<p>RUC: {{representante.empresa.RUC}}</p>
+<p>Datos del Contacto</p>
+<p>Nombre:{{ user.first_name }} </p>
+<p>Apellidos:{{ user.last_name }} </p>
+<p>Email: {{ user.email }} </p>
+<p>Telefono: {{persona.telefono }}</p>
+<p style ="font-family: Helvetica;  color:#606060; font-size: 14pt; text-align: center; margin-top: 40px">Para poder activar a la empresa haga click al siguiente enlace: </p>
+<div style="text-align: center; display: block; margin-top: 30px;">
+                <a href="{{ protocol }}://{{ domain }}{% url 'estudiante-oportunidad-detalle' oportunidad.id  %}"
+                   target="_blank" style = "display: inline-block;background-color: #2d64af; padding: 20px; border-radius: 6px; font-size: 14pt; color: white; width: 200px; text-decoration: none">ACTIVAR EMPRESA</a>
+
+           			 </div>
+            </div>
+</body>
+</html>
