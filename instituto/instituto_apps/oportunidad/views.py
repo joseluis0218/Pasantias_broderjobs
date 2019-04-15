@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from oportunidades.models import Oportunidad,Postulacion,OportunidadCompatibilidad
 from estudiante.models import Estudiante,Resumen,ExperienciaProfesional,ActividadesExtra
 from main.utils import calular_edad,estado_oportunidad
-from .forms import OportunidadForm,OportunidadCrearForm
+from .forms import OportunidadForm
 from main import utils
 from datetime import date, datetime,timedelta,time
 from django.core.exceptions import ObjectDoesNotExist
@@ -12,7 +12,6 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
 def ListarOportunidades(request):
-
 
     oport_abiertas = Oportunidad.objects.filter(estado_oportunidad = 'A')
     oport_cerradas = Oportunidad.objects.filter(estado_oportunidad='C')
@@ -120,35 +119,44 @@ def VerCv(request,id):
 @login_required(login_url='login')
 def AbrirOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
-
-    print(date.today() + timedelta(days=10))
+    postulaciones = Postulacion.objects.filter(oportunidad__id = oportunidad.id)
     if request.method == 'POST':
-        oportunidad.estado_oportunidad = 'A'
-        oportunidad.fecha_cese = date.today() + timedelta(days=10)
-        oportunidad.save()
-        return redirect('oportunidad:index')
-    return render(request,'oportunidad/abrir-oportunidad.html',{'oportunidad':oportunidad})
+        if oportunidad.estado_oportunidad == 'C':
+            oportunidad.estado_oportunidad = 'A'
+            oportunidad.fecha_cese = date.today() + timedelta(days=10)
+            oportunidad.save()
+            return redirect('oportunidad:index')
+        if oportunidad.estado_oportunidad == 'P':
+            oportunidad.estado_oportunidad = 'A'
+            for postulante in postulaciones:
+                postulante.delete()
+            oportunidad.save()
+            return redirect('oportunidad:index')
+    else:
+        if oportunidad.estado_oportunidad == 'C':
+           return render(request,'oportunidad/abrir-oportunidad.html',{'oportunidad':oportunidad})
+        else:
+           return render(request,'oportunidad/abrir-oportunidad-archivada.html',{'oportunidad':oportunidad})
+
+
 
 @login_required(login_url='login')
 def CerrarOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
     if request.method == 'POST':
-        oportunidad.estado_oportunidad = 'C'
         oportunidad.fecha_cese = date.today()
-
+        oportunidad.estado_oportunidad = 'C'
         oportunidad.save()
         return redirect('oportunidad:index')
-    return render(request,'oportunidad/cerrar-oportunidad.html',{'oportunidad':oportunidad})
+
+    return render(request, 'oportunidad/cerrar-oportunidad.html', {'oportunidad': oportunidad})
 
 @login_required(login_url='login')
 def ArchivarOportunidad(request,id):
     oportunidad = Oportunidad.objects.get(id = id)
-    postulaciones = Postulacion.objects.filter(oportunidad__id = oportunidad.id)
-    print(postulaciones)
     if request.method == 'POST':
+        print(oportunidad.estado_oportunidad)
         oportunidad.estado_oportunidad = 'P'
-        for postulante in postulaciones:
-            postulante.delete()
         oportunidad.save()
         return redirect('oportunidad:index')
     return render(request,'oportunidad/archivar-oportunidad.html',{'oportunidad':oportunidad})
@@ -159,6 +167,7 @@ def EditarOportunidad(request, id):
     oportunidad = Oportunidad.objects.get(id=id)
     if request.method == 'GET':
         form = OportunidadForm(instance=oportunidad)
+        return render(request, 'oportunidad/editar-oportunidad.html', {'form': form})
     else:
         form = OportunidadForm(request.POST, instance=oportunidad)
         if not request.is_ajax():
@@ -168,4 +177,3 @@ def EditarOportunidad(request, id):
                 print(request.POST)
                 messages.add_message(request, messages.SUCCESS, 'Oportunidad actualizada correctamente')
             return redirect("oportunidad:index")
-    return render(request,'oportunidad/editar-oportunidad.html',{'form': form})

@@ -40,15 +40,25 @@ def LoginInstituto(request):
             except persona.DoesNotExist:
                 persona = None
             if persona is not None:
-                if persona.tipo_persona == 'I':
-                    login(request, user)
-                    return redirect('oportunidad:index')
-                elif persona.tipo_persona == 'E':
-                    messages.add_message(request, messages.ERROR, "Lo sentimos, estás intentando iniciar sesión como Instituto con un usuario de tipo Estudiante.")
-                    return redirect('login')
+                if persona.estado != 'I':
+                    if persona.tipo_persona == 'I':
+                        login(request, user)
+                        return redirect('oportunidad:index')
+                    elif persona.tipo_persona == 'E':
+                        messages.add_message(request, messages.ERROR, "Lo sentimos, estás intentando iniciar sesión como Instituto con un usuario de tipo Estudiante.")
+                        return redirect('login')
+                    else:
+                        messages.add_message(request, messages.ERROR, "Lo sentimos, estás intentando iniciar sesión como Instituto con un usuario de tipo Empresa.")
+                        return redirect('login')
                 else:
-                    messages.add_message(request, messages.ERROR, "Lo sentimos, estás intentando iniciar sesión como Instituto con un usuario de tipo Empresa.")
+                    messages.add_message(request, messages.ERROR,
+                                         "Lo sentimos, para acceder al sistema necesitar activar su cuenta a tráves del link que se le ha enviado a su correo.")
                     return redirect('login')
+            else:
+                messages.add_message(request, messages.ERROR,
+                                     "Lo sentimos, estás intentando iniciar sesión como Instituto con un usuario de tipo Administrador.")
+                return redirect('login')
+
         else:
             messages.add_message(request, messages.ERROR, 'Email o contraseña inválido, inténtelo de nuevo.')
             return redirect('login')

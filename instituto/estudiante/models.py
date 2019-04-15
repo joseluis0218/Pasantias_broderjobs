@@ -31,6 +31,7 @@ class Estudiante(models.Model):
     idioma = models.ManyToManyField(Idioma, default=None, blank=True, verbose_name="Idioma")
     conocimiento = models.ManyToManyField(Conocimiento, default=None, blank=True, verbose_name="Conocimiento")
     remuneracion = models.CharField(max_length=50, default=None, null=True, blank=True)
+    tiempo_experiencia = models.CharField(max_length=50, default=None, null=True, blank=True)
     foto = models.ImageField('foto perfil', upload_to='img/%Y/%m/%d', null=True, blank=True)
     foto_facebook_url =  models.URLField(default=None, null=True, blank=True)
     completo_test = models.BooleanField(default=False)

@@ -12,16 +12,27 @@ $(".checkbox").on( 'change', function() {
     var valor_id = $(this).attr("id");
     // console.log(valor_id);
     if( $(this).is(':checked') ) {
-
-        $.ajax({
+        $('#modalActivacion').modal("show");
+        $("#confirmacion").on('click',function () {
+            $.ajax({
             url: "cambiar_estado/"+valor_id,
             type: 'POST',
         });
+        });
+        $("#cancelar").on('click',function () {
+            $(".checkbox").attr('checked',false);
+        });
     } else {
+         $('#modalDesactivacion').modal("show");
 
-        $.ajax({
+         $("#confirmacion2").on('click',function () {
+            $.ajax({
             url: "cambiar_estado/"+valor_id,
             type: 'POST',
+        });
+         });
+         $("#cancelar2").on('click',function () {
+            location.reload();
         });
     }
 });
@@ -36,7 +47,7 @@ function estado_empresa() {
         var valor = $(id).val();
 /*        console.log(valor);*/
          if(valor === 'A'){
-        $(id).attr('checked',true);
+            $(id).attr('checked',true);
 
         }else {
              $(id).attr('checked', false);

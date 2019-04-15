@@ -1,5 +1,6 @@
 from django.urls import path,include
-from .views import BuscarCvs
+from .views import Index,BuscarCvs
 urlpatterns = [
-    path('', BuscarCvs ,name = 'index'),
+    path('', Index ,name = 'index'),
+    path('buscar_cvs/', BuscarCvs ,name = 'buscar'),
 ]

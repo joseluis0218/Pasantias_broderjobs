@@ -25,7 +25,7 @@ SECRET_KEY = '@fcpkgqi$29dl6rd!h#51c5_!^0-20zwhb)i)lq37ea2dqdn07'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -150,8 +150,8 @@ EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.gmail.com'
 DEFAULT_FROM_EMAIL = 'broderjobs@gmail.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'jose.cristobal@tecsup.edu.pe'
-EMAIL_HOST_PASSWORD = 'erquinio0218'
+EMAIL_HOST_USER = '*' #put your email.
+EMAIL_HOST_PASSWORD = '*' #put your password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 LOGIN_URL = 'login'

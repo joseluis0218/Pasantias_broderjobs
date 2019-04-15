@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from main.models import Persona, Pais, Ciudad, GradoEstudio, Universidad, Carrera, TipoPuesto, CargaHoraria, Idioma, \
-    Conocimiento, TipoRemuneracion, Beneficio, PeriodosGraduacion, TipoCarrera, RamaCarrera, AreaExpeiencia, TiempoExpeiencia, NivelAcademico
+    Conocimiento, TipoRemuneracion, Beneficio, PeriodosGraduacion, TipoCarrera, RamaCarrera, AreaExpeiencia, TiempoExpeiencia, NivelAcademico,Distrito
 from empresas.models import Empresa, EmpresaDivision
 from estudiante.models import Estudiante
 from django.contrib.auth.models import User
@@ -69,6 +69,7 @@ class Oportunidad(models.Model):
     titulo = models.CharField(max_length=100, default=None, null=True, blank=True )
     carga_horaria = models.ForeignKey(CargaHoraria, default=None, null=True, blank=True, verbose_name="Jornada Laboral",on_delete=True)
     pais = models.ForeignKey(Pais, null=True, blank=True,on_delete=models.CASCADE)
+    distrito = models.ForeignKey(Distrito, null=True, blank=True, on_delete=models.CASCADE)
     ciudad = models.ForeignKey(Ciudad, null=True, blank=True,on_delete=models.CASCADE)
     remuneracion = models.ForeignKey(TipoRemuneracion, default=None, null=True, blank=True, verbose_name="Tipo de Remuneracion",on_delete=models.CASCADE)
     remuneracion_min = models.CharField(max_length=50, default=None, null=True, blank=True)

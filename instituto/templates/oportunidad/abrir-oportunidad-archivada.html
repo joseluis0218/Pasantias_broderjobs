@@ -7,8 +7,8 @@
 
     <form id="eliminar-usuario" method="POST">
         {% csrf_token %}
-        <h3 class="center">¿ Estás seguro de <strong>archivar</strong> la oportunidad : <strong>"{{ oportunidad.titulo }}"</strong> ?</h3>
-        <p>Al archivar la oportunidad todas las postulaciones relacionadas serán finalizadas.</p>
+        <h3 class="center">¿ Estás seguro de <strong>abrir</strong> la oportunidad : <strong>"{{ oportunidad.titulo }}"</strong> ?</h3>
+        <p class="center">Al abrir la oportunidad se eliminarán todos sus postulaciones.</p>
         <div class="modal-footer">
             <button type="submit" class="btn btn-info" id="btn-enviar">Aceptar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

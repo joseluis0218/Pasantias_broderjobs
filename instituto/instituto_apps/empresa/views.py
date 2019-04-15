@@ -28,9 +28,13 @@ def CambiarEstado(request,id):
             if representante.estado == 'A':
                 representante.estado = 'I'
                 persona.enviar_correo = False
+                representante.save()
+                persona.save()
             else:
                 representante.estado = 'A'
                 persona.enviar_correo = True
+                representante.save()
+                persona.save()
                 body = render_to_string('correos/CuentaActiva.html', {'email': persona.usuario.email,
                                                                       'domain': request.META['HTTP_HOST'],
                                                                       'protocol': 'http'
@@ -40,7 +44,7 @@ def CambiarEstado(request,id):
                                              to=[persona.usuario.email])
                 email_message.content_subtype = 'html'
                 email_message.send()
-            representante.save()
+
 
             if empresa.estado == 'A':
                 empresa.estado = 'I'

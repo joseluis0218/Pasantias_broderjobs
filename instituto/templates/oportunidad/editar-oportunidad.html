@@ -21,7 +21,7 @@
 
 {% endblock %}
 <div class="modal-header">
-    <h4 class="modal-title" id="myModalLabel">VISTA PREVIA</h4>
+    <h4 class="modal-title" id="myModalLabel">EDITAR OPORTUNIDAD</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 </div>
 <div class="modal-body">
@@ -118,17 +118,17 @@
             </div>
             <div class="row col-sm-8">
             <div class="col-sm-6">
-                {% render_field form.pais %}
-                <div class="{% if form.pais.errors %} invalid{% endif %}">
-                {% for error in form.pais.errors  %}
+                {% render_field form.ciudad %}
+                <div class="{% if form.ciudad.errors %} invalid{% endif %}">
+                {% for error in form.ciudad.errors  %}
                 <small style="color: red" class="help-block">{{ error }}</small>
                 {% endfor %}
                 </div>
             </div>
             <div class="col-sm-6">
-                {% render_field form.ciudad %}
-                <div class="{% if form.ciudad.errors %} invalid{% endif %}">
-                {% for error in form.ciudad.errors  %}
+                {% render_field form.distrito %}
+                <div class="{% if form.distrito.errors %} invalid{% endif %}">
+                {% for error in form.distrito.errors  %}
                 <small style="color: red" class="help-block">{{ error }}</small>
                 {% endfor %}
                 </div>

@@ -12,7 +12,7 @@
   <div class="media-body">
             <h3><b>{{ oportunidad.titulo }}</b></h3>
             <h5>{{ oportunidad.empresa.nombre | upper }}</h5>
-            <h5>{{ oportunidad.ciudad.descripcion | upper }}, {{ oportunidad.pais.descripcion }}</h5>
+            <h5>{{ oportunidad.ciudad.descripcion | upper }}, {{ oportunidad.distrito.descripcion }}</h5>
             <h5>Remuneración: S./
                 {%if oportunidad.remuneracion.descripcion == 'Fijo' %}
                     {{ oportunidad.remuneracion_min }}
